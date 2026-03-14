@@ -1,0 +1,61 @@
+{
+  "slug": "how-to-rank-on-chatgpt",
+  "discovered_at": "2026-03-14",
+  "verdict": "GO",
+  "signal": {
+    "topic_title": "How to Rank on ChatGPT — optimizing content for AI search engines",
+    "topic_tag": "seo",
+    "demand_type": "how-to",
+    "urgency": "high",
+    "urgency_reason": "Emerging SEO category — GEO (Generative Engine Optimization) is the hottest new topic as AI search cuts into Google clicks 42%",
+    "platforms": ["Ahrefs Blog", "Search Engine Land", "Reddit"],
+    "source_count": 5,
+    "evidence": "Multiple sources: Ahrefs 'How to Rank on ChatGPT', Search Engine Land 'AI Overviews cut clicks 42%', 'Optimizing Content for Agents' on HN. Reddit r/SEO discussing GEO strategy."
+  },
+  "filter": {
+    "search_intent": {"pass": true, "detail": "Users actively searching how to get their content cited by ChatGPT/Gemini/Perplexity — clear actionable intent"},
+    "keywords_exist": {"pass": true, "detail": "how to rank on chatgpt (Vol:210, KD:16), generative engine optimization (Vol:5400, KD:73), chatgpt seo (Vol:1300, KD:70), geo seo strategy (Vol:30, KD:18)"},
+    "small_site_can_rank": {"pass": true, "detail": "KD 16 for primary keyword — new topic with limited established competition"},
+    "sustainable": {"pass": true, "detail": "AI search is only growing; ChatGPT, Gemini, Perplexity usage rising fast. This demand will compound."},
+    "monetizable": {"pass": true, "detail": "CPC $7.06; affiliate potential for GEO tools, AI SEO platforms, consulting services"}
+  },
+  "metrics": [
+    {
+      "keyword": "how to rank on chatgpt", "kd": 16, "volume": 210, "cpc": 7.06,
+      "trend_note": "New keyword, rapidly growing as AI search adoption increases"
+    },
+    {
+      "keyword": "generative engine optimization", "kd": 73, "volume": 5400, "cpc": 8.66,
+      "trend_note": "High volume but very competitive — use as secondary/aspirational target"
+    },
+    {
+      "keyword": "chatgpt seo", "kd": 70, "volume": 1300, "cpc": 7.83,
+      "trend_note": "Competitive but valuable for topical authority"
+    },
+    {
+      "keyword": "geo seo strategy", "kd": 18, "volume": 30, "cpc": 3.09,
+      "trend_note": "Low volume but low KD — good long-tail entry point"
+    }
+  ],
+  "reddit": {
+    "query": "how to rank on chatgpt",
+    "posts_found": 3,
+    "top_post": "r/SEO discussion on ranking in AI search (6⬆ 34💬)",
+    "key_pain_point": "SEO professionals scrambling to understand new AI citation rules — no consensus on best practices yet",
+    "key_insight": "Early mover advantage is huge; most content on this topic is still surface-level"
+  },
+  "action": {
+    "site_type": "guide",
+    "primary_keywords": ["how to rank on chatgpt", "geo seo strategy"],
+    "secondary_keywords": ["generative engine optimization", "chatgpt seo", "ai search visibility", "optimize content for ai search"],
+    "content_plan": "Definitive guide to GEO: how ChatGPT selects sources, optimization techniques, structured data, entity optimization, case studies",
+    "monetization": "GEO tool affiliate, AI SEO consulting, AdSense (CPC $7.06)",
+    "estimated_pages": 5,
+    "next_steps": [
+      "SERP analysis for 'how to rank on chatgpt'",
+      "Research ChatGPT's source selection criteria",
+      "Build comprehensive GEO guide with actionable checklist",
+      "Target long-tail: 'geo seo strategy' as entry page"
+    ]
+  }
+}

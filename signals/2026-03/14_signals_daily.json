@@ -1,0 +1,565 @@
+{
+  "date": "2026-03-14",
+  "total_scanned": 289,
+  "results": {
+    "go": 3,
+    "watch": 20,
+    "pass": 39
+  },
+  "topics": [
+    {
+      "rank": 1,
+      "title": "content decay",
+      "verdict": "GO",
+      "slug": "content-decay",
+      "metrics": [
+        {
+          "keyword": "content decay",
+          "kd": 22,
+          "volume": 260,
+          "cpc": 0
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "how to rank on chatgpt",
+      "verdict": "GO",
+      "slug": "how-to-rank-on-chatgpt",
+      "metrics": [
+        {
+          "keyword": "how to rank on chatgpt",
+          "kd": 16,
+          "volume": 210,
+          "cpc": 7.06
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "run ai locally",
+      "verdict": "GO",
+      "slug": "run-ai-locally",
+      "metrics": [
+        {
+          "keyword": "run ai locally",
+          "kd": 22,
+          "volume": 210,
+          "cpc": 3.48
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "ai desktop assistant",
+      "verdict": "WATCH",
+      "slug": "ai-desktop-assistant",
+      "metrics": [
+        {
+          "keyword": "ai desktop assistant",
+          "kd": 61,
+          "volume": 210,
+          "cpc": 3.58
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "ai search visibility",
+      "verdict": "WATCH",
+      "slug": "ai-search-visibility",
+      "metrics": [
+        {
+          "keyword": "ai search visibility",
+          "kd": 41,
+          "volume": 210,
+          "cpc": 14.26
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "ap automation for small business",
+      "verdict": "WATCH",
+      "slug": "ap-automation-for-small-business",
+      "metrics": [
+        {
+          "keyword": "ap automation for small business",
+          "kd": 24,
+          "volume": 70,
+          "cpc": 0
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "ap automation software",
+      "verdict": "WATCH",
+      "slug": "ap-automation-software",
+      "metrics": [
+        {
+          "keyword": "ap automation software",
+          "kd": 34,
+          "volume": 2900,
+          "cpc": 76.43
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "best gpu for local llm",
+      "verdict": "WATCH",
+      "slug": "best-gpu-for-local-llm",
+      "metrics": [
+        {
+          "keyword": "best gpu for local llm",
+          "kd": 17,
+          "volume": 90,
+          "cpc": 2.17
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "best local llm for coding",
+      "verdict": "WATCH",
+      "slug": "best-local-llm-for-coding",
+      "metrics": [
+        {
+          "keyword": "best local llm for coding",
+          "kd": 41,
+          "volume": 390,
+          "cpc": 6.92
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "better than rag",
+      "verdict": "WATCH",
+      "slug": "better-than-rag",
+      "metrics": [
+        {
+          "keyword": "better than rag",
+          "kd": null,
+          "volume": 20,
+          "cpc": 6.46
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "chatgpt seo",
+      "verdict": "WATCH",
+      "slug": "chatgpt-seo",
+      "metrics": [
+        {
+          "keyword": "chatgpt seo",
+          "kd": 70,
+          "volume": 1300,
+          "cpc": 7.83
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "generative engine optimization",
+      "verdict": "WATCH",
+      "slug": "generative-engine-optimization",
+      "metrics": [
+        {
+          "keyword": "generative engine optimization",
+          "kd": 73,
+          "volume": 5400,
+          "cpc": 8.66
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "geo seo strategy",
+      "verdict": "WATCH",
+      "slug": "geo-seo-strategy",
+      "metrics": [
+        {
+          "keyword": "geo seo strategy",
+          "kd": 18,
+          "volume": 30,
+          "cpc": 3.09
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "invoice automation software",
+      "verdict": "WATCH",
+      "slug": "invoice-automation-software",
+      "metrics": [
+        {
+          "keyword": "invoice automation software",
+          "kd": 29,
+          "volume": 1300,
+          "cpc": 63.64
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "llm context compression",
+      "verdict": "WATCH",
+      "slug": "llm-context-compression",
+      "metrics": [
+        {
+          "keyword": "llm context compression",
+          "kd": null,
+          "volume": 20,
+          "cpc": 0
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "llm cost calculator",
+      "verdict": "WATCH",
+      "slug": "llm-cost-calculator",
+      "metrics": [
+        {
+          "keyword": "llm cost calculator",
+          "kd": 30,
+          "volume": 50,
+          "cpc": 5.35
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "llm model optimization",
+      "verdict": "WATCH",
+      "slug": "llm-model-optimization",
+      "metrics": [
+        {
+          "keyword": "llm model optimization",
+          "kd": null,
+          "volume": 20,
+          "cpc": 0
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "local code assistant",
+      "verdict": "WATCH",
+      "slug": "local-code-assistant",
+      "metrics": [
+        {
+          "keyword": "local code assistant",
+          "kd": null,
+          "volume": 20,
+          "cpc": 3.87
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "optimize content for ai search",
+      "verdict": "WATCH",
+      "slug": "optimize-content-for-ai-search",
+      "metrics": [
+        {
+          "keyword": "optimize content for ai search",
+          "kd": 36,
+          "volume": 140,
+          "cpc": 11.69
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "quantize llm model",
+      "verdict": "WATCH",
+      "slug": "quantize-llm-model",
+      "metrics": [
+        {
+          "keyword": "quantize llm model",
+          "kd": null,
+          "volume": 20,
+          "cpc": 0
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "vibe coding cost",
+      "verdict": "WATCH",
+      "slug": "vibe-coding-cost",
+      "metrics": [
+        {
+          "keyword": "vibe coding cost",
+          "kd": null,
+          "volume": 20,
+          "cpc": 6.07
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "title": "whisper on iphone",
+      "verdict": "WATCH",
+      "slug": "whisper-on-iphone",
+      "metrics": [
+        {
+          "keyword": "whisper on iphone",
+          "kd": null,
+          "volume": 20,
+          "cpc": 0
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "whisper speaker diarization",
+      "verdict": "WATCH",
+      "slug": "whisper-speaker-diarization",
+      "metrics": [
+        {
+          "keyword": "whisper speaker diarization",
+          "kd": 20,
+          "volume": 70,
+          "cpc": 7.31
+        }
+      ]
+    }
+  ],
+  "clusters": [
+    {
+      "name": "local-llm-for-coding",
+      "items": [
+        "#38",
+        "#42",
+        "#145",
+        "#255",
+        "#116",
+        "#32",
+        "#230"
+      ],
+      "seed_keywords": [
+        "best local llm for coding",
+        "self hosted ai coding",
+        "claude code alternative local",
+        "ai coding agent self hosted",
+        "local code assistant",
+        "open source ai code editor"
+      ],
+      "reddit_subs": [
+        "LocalLLaMA",
+        "webdev",
+        "SaaS"
+      ]
+    },
+    {
+      "name": "rank-on-chatgpt-seo",
+      "items": [
+        "#59",
+        "#85",
+        "#236",
+        "#69"
+      ],
+      "seed_keywords": [
+        "how to rank on chatgpt",
+        "optimize content for ai search",
+        "generative engine optimization",
+        "geo seo strategy",
+        "ai search visibility",
+        "chatgpt seo"
+      ],
+      "reddit_subs": [
+        "SEO",
+        "SaaS",
+        "webdev"
+      ]
+    },
+    {
+      "name": "rag-alternative",
+      "items": [
+        "#148"
+      ],
+      "seed_keywords": [
+        "rag alternative",
+        "vector rag failing",
+        "retrieval without embeddings",
+        "rag complex documents",
+        "better than rag"
+      ],
+      "reddit_subs": [
+        "LocalLLaMA",
+        "MachineLearning"
+      ]
+    },
+    {
+      "name": "run-ai-locally-hardware",
+      "items": [
+        "#10",
+        "#37",
+        "#147",
+        "#196",
+        "#264"
+      ],
+      "seed_keywords": [
+        "run ai locally",
+        "best gpu for local llm",
+        "ollama best model 3090",
+        "run llm rtx 5090",
+        "local ai setup guide"
+      ],
+      "reddit_subs": [
+        "LocalLLaMA",
+        "MachineLearning"
+      ]
+    },
+    {
+      "name": "desktop-ai-agent-automation",
+      "items": [
+        "#4",
+        "#129",
+        "#177"
+      ],
+      "seed_keywords": [
+        "desktop ai agent",
+        "ai task automation tool",
+        "teach ai agent by demonstration",
+        "automate work with ai",
+        "ai desktop assistant"
+      ],
+      "reddit_subs": [
+        "LocalLLaMA",
+        "artificial",
+        "SaaS"
+      ]
+    },
+    {
+      "name": "manage-cuda-versions",
+      "items": [
+        "#142"
+      ],
+      "seed_keywords": [
+        "manage cuda versions",
+        "cuda version manager",
+        "multiple cuda versions linux",
+        "cuda toolkit management",
+        "ml project cuda setup"
+      ],
+      "reddit_subs": [
+        "MachineLearning",
+        "LocalLLaMA"
+      ]
+    },
+    {
+      "name": "llm-cost-estimator",
+      "items": [
+        "#178",
+        "#261"
+      ],
+      "seed_keywords": [
+        "llm cost calculator",
+        "estimate ai api cost",
+        "vibe coding cost",
+        "ai api pricing comparison",
+        "llm token cost estimator"
+      ],
+      "reddit_subs": [
+        "LocalLLaMA",
+        "SaaS",
+        "webdev"
+      ]
+    },
+    {
+      "name": "llm-compression-quantization",
+      "items": [
+        "#223",
+        "#146",
+        "#149"
+      ],
+      "seed_keywords": [
+        "llm compression techniques",
+        "lossless llm compression",
+        "quantize llm model",
+        "reduce llm ram usage",
+        "llm model optimization"
+      ],
+      "reddit_subs": [
+        "LocalLLaMA",
+        "MachineLearning"
+      ]
+    },
+    {
+      "name": "content-decay-seo",
+      "items": [
+        "#86"
+      ],
+      "seed_keywords": [
+        "content decay",
+        "fix content decay",
+        "declining traffic seo fix",
+        "refresh old content seo",
+        "content decay checker"
+      ],
+      "reddit_subs": [
+        "SEO",
+        "webdev"
+      ]
+    },
+    {
+      "name": "ap-automation-ocr",
+      "items": [
+        "#131"
+      ],
+      "seed_keywords": [
+        "ap automation software",
+        "accounts payable automation ocr",
+        "best ap automation tool",
+        "invoice automation software",
+        "ap automation for small business"
+      ],
+      "reddit_subs": [
+        "Entrepreneur",
+        "SaaS"
+      ]
+    },
+    {
+      "name": "whisper-local-mobile",
+      "items": [
+        "#278"
+      ],
+      "seed_keywords": [
+        "whisper on iphone",
+        "local speech to text iphone",
+        "whisper speaker diarization",
+        "offline transcription app",
+        "run whisper locally mobile"
+      ],
+      "reddit_subs": [
+        "LocalLLaMA",
+        "MachineLearning"
+      ]
+    },
+    {
+      "name": "ai-agent-context-management",
+      "items": [
+        "#56",
+        "#18"
+      ],
+      "seed_keywords": [
+        "ai agent memory system",
+        "llm context compression",
+        "ai agent context window",
+        "reduce llm context length",
+        "ai memory architecture"
+      ],
+      "reddit_subs": [
+        "LocalLLaMA",
+        "MachineLearning",
+        "artificial"
+      ]
+    }
+  ]
+}

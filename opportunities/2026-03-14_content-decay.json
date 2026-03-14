@@ -1,0 +1,48 @@
+{
+  "slug": "content-decay",
+  "discovered_at": "2026-03-14",
+  "verdict": "GO",
+  "signal": {
+    "topic_title": "Content Decay — detecting and fixing declining SEO traffic",
+    "topic_tag": "seo",
+    "demand_type": "how-to",
+    "urgency": "medium",
+    "urgency_reason": "Evergreen SEO pain point, amplified by Google algorithm updates and AI Overviews reducing click-through rates",
+    "platforms": ["Ahrefs Blog", "Reddit"],
+    "source_count": 2,
+    "evidence": "Ahrefs Blog published 'What Is Content Decay? (And How to Fix It)' — topic has steady search demand at KD22/Vol260"
+  },
+  "filter": {
+    "search_intent": {"pass": true, "detail": "Users search 'content decay' to understand the concept and find actionable fixes for declining traffic"},
+    "keywords_exist": {"pass": true, "detail": "content decay (Vol:260, KD:22), fix content decay (Vol:0), refresh old content seo (Vol:0)"},
+    "small_site_can_rank": {"pass": true, "detail": "KD 22 is very achievable for small sites; informational intent favors comprehensive guides"},
+    "sustainable": {"pass": true, "detail": "Evergreen SEO concept — as long as content ages and traffic declines, people will search for solutions"},
+    "monetizable": {"pass": true, "detail": "CPC $0 but strong affiliate potential for SEO tools (Ahrefs, Semrush, SurferSEO) that detect content decay"}
+  },
+  "metrics": [
+    {
+      "keyword": "content decay", "kd": 22, "volume": 260, "cpc": 0,
+      "trend_note": "Steady informational keyword in SEO niche"
+    }
+  ],
+  "reddit": {
+    "query": "content decay traffic declining fix",
+    "posts_found": 3,
+    "top_post": "Off-topic results (content-decay-seo search returned non-SEO posts)",
+    "key_pain_point": "Site owners notice traffic drops on old content but don't know systematic approach to diagnose and fix",
+    "key_insight": "Need for actionable checklist: identify decaying pages, diagnose cause, update content, resubmit"
+  },
+  "action": {
+    "site_type": "guide",
+    "primary_keywords": ["content decay"],
+    "secondary_keywords": ["fix content decay", "refresh old content seo", "declining traffic seo", "content decay checker"],
+    "content_plan": "Comprehensive guide: what is content decay, how to detect it, step-by-step fix process, prevention strategies",
+    "monetization": "SEO tool affiliate (Ahrefs $99/mo, Semrush $129/mo for content audit features)",
+    "estimated_pages": 3,
+    "next_steps": [
+      "SERP analysis for 'content decay' to see competition",
+      "Build comprehensive guide with content decay detection checklist",
+      "Include tool comparison section with affiliate links"
+    ]
+  }
+}
