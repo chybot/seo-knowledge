@@ -1,0 +1,34 @@
+{
+  "date": "2026-03-14",
+  "total_scanned": 30,
+  "results": {
+    "go": 1,
+    "watch": 2,
+    "pass": 27
+  },
+  "go": [
+    {
+      "slug": "run-ai-locally",
+      "keyword": "run ai locally",
+      "kd": 22,
+      "volume": 210,
+      "reason": "165 suggest补全, KD22可排, CPC $3.48有变现"
+    }
+  ],
+  "watch": [
+    {
+      "slug": "desktop-ai-agent",
+      "keyword": "desktop ai agent",
+      "kd": 74,
+      "volume": 70,
+      "reason": "需求真实(60 suggest)但KD太高, 找长尾变体"
+    },
+    {
+      "slug": "logi-options-alternative",
+      "keyword": "logi options plus alternative",
+      "kd": null,
+      "volume": 20,
+      "reason": "量太小, 除非做bloatware alternatives聚合"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "run-ai-locally",
+  "discovered_at": "2026-03-14",
+  "verdict": "GO",
+  "signal": {
+    "topic_title": "Can I run AI locally?",
+    "topic_tag": "ai",
+    "demand_type": "how_to",
+    "urgency": "low",
+    "platforms": ["HackerNews"],
+    "source_count": 1,
+    "evidence": "HN 热帖 + Google Suggest 165 个补全词，需求巨大且持续"
+  },
+  "validation": {
+    "top_keywords": [
+      {"keyword": "run ai locally", "kd": 22, "volume": 210, "cpc": 3.48},
+      {"keyword": "best ai to run locally", "kd": 18, "volume": 30, "cpc": 4.9},
+      {"keyword": "ollama tutorial", "kd": 43, "volume": 390, "cpc": 1.85},
+      {"keyword": "run llm on mac", "kd": null, "volume": 10, "cpc": 0}
+    ],
+    "suggest_count": 165,
+    "verdict": "GO"
+  },
+  "action": {
+    "site_type": "tutorial",
+    "target_keywords": ["run ai locally", "best ai to run locally", "local ai setup guide"],
+    "content_plan": "本地 AI 搭建完整教程 + 各模型对比 + 硬件推荐",
+    "monetization": "硬件 affiliate (GPU/Mac), AI 课程推广"
+  }
+}
