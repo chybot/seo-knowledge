@@ -1,0 +1,30 @@
+{
+  "date": "2026-03-14",
+  "version": "full",
+  "total_scanned": 254,
+  "params": {"hours": 48, "min_score": 0, "published_at_filter": true},
+  "results": {"go": 2, "watch": 7, "pass": 245},
+  "pipeline": "254 seeds → 39 粗筛存活 → 10 聚合方向 → 43 词 SEMrush 批量 → 2 GO, 7 WATCH",
+  "go": [
+    {"slug": "claude-code-vs-cursor", "keyword": "claude code vs cursor", "kd": 25, "volume": 3600, "cpc": 6.32, "source": "Reddit扩充"},
+    {"slug": "run-ai-locally", "keyword": "run ai locally", "kd": 22, "volume": 210, "cpc": 3.48, "source": "HN种子"}
+  ],
+  "watch": [
+    {"slug": "ai-manga-translator", "keyword": "ai manga translator", "kd": 46, "volume": 590, "cpc": 0.6, "reason": "KD偏高找长尾, Vol不错, 来自Reddit低分帖#141"},
+    {"slug": "best-local-llm-coding", "keyword": "best local llm for coding", "kd": 41, "volume": 390, "cpc": 6.92, "reason": "KD41+CPC$6.92高商业价值, Reddit 7个tool_requests"},
+    {"slug": "rank-on-chatgpt", "keyword": "rank on chatgpt", "kd": 22, "volume": 50, "cpc": 9.43, "reason": "KD完美但Vol小, CPC$9.43极高, 新概念增长中"},
+    {"slug": "reddit-alt-frontend", "keyword": "reddit alternative frontend", "kd": 21, "volume": 70, "cpc": 0, "reason": "KD完美Vol小, 利基"},
+    {"slug": "ai-overviews-seo", "keyword": "ai overviews seo", "kd": 59, "volume": 260, "cpc": 6.26, "reason": "AI SEO赛道, KD高但CPC$6-10极高商业价值"},
+    {"slug": "optimize-ai-search", "keyword": "how to optimize for ai search", "kd": 62, "volume": 210, "cpc": 9.73, "reason": "同上, CPC$9.73"},
+    {"slug": "chatgpt-seo", "keyword": "chatgpt seo optimization", "kd": 58, "volume": 110, "cpc": 8.92, "reason": "同上"}
+  ],
+  "new_vs_previous": {
+    "description": "全量254条 vs 上轮30条高分 新增发现",
+    "new_finds": [
+      {"keyword": "ai manga translator", "source": "#141 Reddit低分帖"},
+      {"keyword": "best local llm for coding", "source": "#32,#135 Reddit帖"},
+      {"keyword": "rank on chatgpt", "source": "#84 Ahrefs Blog"},
+      {"keyword": "AI SEO赛道(ai overviews seo等)", "source": "#59,#64 SEO媒体"}
+    ]
+  }
+}
