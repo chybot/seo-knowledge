@@ -184,7 +184,7 @@ def load_json_files(pattern):
 def build_index(opps, signals):
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
     go_count = sum(1 for o in opps if o.get("verdict") == "GO")
-    watch_count = sum(1 for o in opps if o.get("verdict") in ("CAUTIOUS", "WATCH"))
+    watch_count = sum(len(s.get("watch", [])) for s in signals)
     total_scanned = sum(s.get("total_scanned", 0) for s in signals)
 
     # Opportunity cards (clickable)
@@ -224,6 +224,41 @@ def build_index(opps, signals):
           </div>
           <div class="card-kw">{kw_tags}</div>
         </a>'''
+
+    # WATCH cards from signals
+    watch_html = ""
+    all_watches = []
+    for sig in signals:
+        for w in sig.get("watch", []):
+            w["_date"] = sig.get("date", "")
+            all_watches.append(w)
+    if not all_watches:
+        watch_html = '<div class="empty">暂无观察中的机会。</div>'
+    for w in all_watches:
+        slug = _esc(w.get("slug", ""))
+        kw = _esc(w.get("keyword", ""))
+        kd = w.get("kd", "—")
+        vol = w.get("volume", "—")
+        cpc = w.get("cpc", "—")
+        reason = _esc(w.get("reason", ""))
+        kd_s = str(kd) if kd is not None else "—"
+        vol_s = f"{vol:,}" if isinstance(vol, (int, float)) else "—"
+        cpc_s = f"${cpc}" if cpc and cpc != "—" else "—"
+        watch_html += f'''
+        <div class="card watch">
+          <div class="card-header">
+            <span class="badge watch">🟡 WATCH</span>
+            <span class="slug">{slug}</span>
+            <span class="date">{_esc(w.get("_date",""))}</span>
+          </div>
+          <div class="card-title" style="font-size:14px"><code>{kw}</code></div>
+          <div class="card-meta">
+            <span class="tag">KD:{kd_s}</span>
+            <span class="tag">Vol:{vol_s}</span>
+            <span class="tag">CPC:{cpc_s}</span>
+          </div>
+          <div class="card-detail">{reason}</div>
+        </div>'''
 
     # Signal daily cards (clickable)
     sig_html = ""
@@ -276,8 +311,9 @@ def build_index(opps, signals):
       <span class="step">✅ GO / ❌ PASS</span><span class="arrow">→</span>
       <span class="step">🚀 建站</span>
     </div>
-    <section><h2><span class="dot" style="background:#22c55e"></span>机会 Opportunities</h2>{opp_html}</section>
-    <section><h2><span class="dot" style="background:#3b82f6"></span>信号日志 Signal Log</h2>{sig_html}</section>'''
+    <section><h2><span class="dot" style="background:#22c55e"></span>🟢 GO — 立即行动</h2>{opp_html}</section>
+    <section><h2><span class="dot" style="background:#eab308"></span>🟡 WATCH — 观察中</h2>{watch_html}</section>
+    <section><h2><span class="dot" style="background:#3b82f6"></span>📡 信号日志</h2>{sig_html}</section>'''
 
     return _page("Dashboard", body)
 
