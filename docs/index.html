@@ -1,128 +1,131 @@
 <!DOCTYPE html>
 <html lang="zh-CN"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SEO Knowledge Base</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard — SEO Knowledge Base</title>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;
   background:#0a0a0a; color:#e0e0e0; -webkit-font-smoothing:antialiased; }
-.container { max-width:900px; margin:0 auto; padding:20px 16px; }
-
-/* Header */
-.header { text-align:center; padding:40px 0 30px; border-bottom:1px solid #1a1a1a; margin-bottom:30px; }
+a { color:#60a5fa; text-decoration:none; } a:hover { text-decoration:underline; }
+.container { max-width:940px; margin:0 auto; padding:20px 16px; }
+.header { text-align:center; padding:40px 0 24px; border-bottom:1px solid #1a1a1a; margin-bottom:28px; }
 .header h1 { font-size:24px; font-weight:700; color:#fff; letter-spacing:-.3px; }
 .header p { color:#555; font-size:13px; margin-top:6px; }
-.stats { display:flex; justify-content:center; gap:10px; margin-top:14px; }
-.stats .stat { font-size:12px; color:#666; background:#111; padding:4px 12px; border-radius:16px; border:1px solid #1a1a1a; }
-.stats .stat strong { color:#aaa; }
-
-/* Section */
-section { margin-bottom:40px; }
-section h2 { font-size:16px; font-weight:600; color:#888; margin-bottom:16px;
-  display:flex; align-items:center; gap:8px; }
+.breadcrumb { font-size:12px; color:#555; margin-bottom:20px; }
+.breadcrumb a { color:#666; }
+.stats { display:flex; justify-content:center; gap:10px; margin-top:14px; flex-wrap:wrap; }
+.stat { font-size:12px; color:#666; background:#111; padding:4px 12px; border-radius:16px; border:1px solid #1a1a1a; }
+.stat strong { color:#aaa; }
+.pipeline { display:flex; align-items:center; justify-content:center; gap:6px; margin:20px 0 30px; flex-wrap:wrap; }
+.pipeline .step { font-size:11px; color:#555; background:#111; padding:4px 10px; border-radius:6px; border:1px solid #1a1a1a; }
+.pipeline .arrow { color:#333; font-size:12px; }
+section { margin-bottom:36px; }
+section h2 { font-size:16px; font-weight:600; color:#888; margin-bottom:14px; display:flex; align-items:center; gap:8px; }
 section h2 .dot { width:6px; height:6px; border-radius:50%; }
+section h3 { font-size:14px; color:#aaa; margin:18px 0 10px; }
 
 /* Cards */
 .card { background:#0d0d0d; border:1px solid #1a1a1a; border-radius:12px;
-  padding:16px 18px; margin-bottom:12px; transition:border-color .15s; }
-.card:hover { border-color:#2a2a2a; }
+  padding:16px 18px; margin-bottom:10px; transition:border-color .15s; cursor:pointer; display:block; text-decoration:none !important; color:inherit; }
+.card:hover { border-color:#333; }
 .card.go { border-left:3px solid #22c55e; }
 .card.watch { border-left:3px solid #eab308; }
-.card.risky { border-left:3px solid #f97316; }
-.card.pass { border-left:3px solid #ef4444; }
-
-.card-header { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
-.verdict-badge { font-size:11px; padding:2px 8px; border-radius:4px; font-weight:600; }
-.verdict-badge.go { background:#052e16; color:#4ade80; }
-.verdict-badge.watch { background:#2a1f00; color:#facc15; }
-.verdict-badge.pass { background:#2a0000; color:#f87171; }
-.slug { font-size:12px; color:#666; font-family:monospace; }
+.card.pass { border-left:3px solid #555; }
+.card-header { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.badge { font-size:10px; padding:2px 8px; border-radius:4px; font-weight:600; }
+.badge.go { background:#052e16; color:#4ade80; }
+.badge.watch { background:#2a1f00; color:#facc15; }
+.badge.pass { background:#1a1a1a; color:#666; }
+.slug { font-size:12px; color:#555; font-family:monospace; }
 .date { font-size:11px; color:#444; margin-left:auto; }
-
-.card-title { font-size:16px; font-weight:600; color:#eee; line-height:1.4; margin-bottom:8px; }
-.card-meta { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
+.card-title { font-size:15px; font-weight:600; color:#eee; line-height:1.4; margin-bottom:6px; }
+.card-meta { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px; }
 .tag { font-size:10px; padding:2px 8px; border-radius:10px; background:#1a1a1a; color:#888; border:1px solid #252525; }
-.platforms { font-size:11px; color:#555; }
-.evidence { font-size:13px; color:#777; margin-bottom:10px; line-height:1.5; }
+.card-detail { font-size:12px; color:#666; line-height:1.6; }
+.card-kw { font-size:12px; color:#777; margin-top:6px; }
+.card-kw code { background:#111; padding:1px 5px; border-radius:3px; color:#aaa; font-size:11px; }
+.card-arrow { float:right; color:#333; font-size:14px; margin-top:4px; }
 
-/* Keyword table */
-.kw-table { width:100%; font-size:12px; border-collapse:collapse; margin:8px 0; }
-.kw-table th { text-align:left; color:#555; font-weight:500; padding:4px 8px; border-bottom:1px solid #1a1a1a; }
-.kw-table td { padding:4px 8px; color:#aaa; border-bottom:1px solid #111; }
-.kw-table td.kw { color:#ddd; font-family:monospace; font-size:12px; }
+/* Tables */
+.kw-table { width:100%; font-size:12px; border-collapse:collapse; margin:10px 0; }
+.kw-table th { text-align:left; color:#555; font-weight:500; padding:6px 10px; border-bottom:1px solid #1a1a1a; }
+.kw-table td { padding:6px 10px; color:#aaa; border-bottom:1px solid #111; }
+.kw-table td.kw { color:#ddd; font-family:monospace; }
 .kw-table tr:last-child td { border-bottom:none; }
+.kw-table td.good { color:#4ade80; }
+.kw-table td.warn { color:#facc15; }
+.kw-table td.bad { color:#f87171; }
 
-.plan { font-size:12px; color:#666; margin-top:6px; line-height:1.5; }
-.plan strong { color:#888; }
+/* Filter checklist */
+.filter-list { list-style:none; margin:10px 0; }
+.filter-list li { font-size:13px; color:#888; padding:6px 10px; border-bottom:1px solid #111; line-height:1.5; }
+.filter-list li:last-child { border:none; }
+.filter-list .pass-icon { color:#4ade80; }
+.filter-list .fail-icon { color:#f87171; }
+.filter-list .warn-icon { color:#facc15; }
 
-/* Signals */
-.signal-day { background:#0d0d0d; border:1px solid #1a1a1a; border-radius:10px;
-  padding:14px 16px; margin-bottom:10px; }
-.signal-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
-.signal-date { font-size:14px; font-weight:600; color:#ccc; }
-.signal-stats { font-size:12px; color:#555; }
-.go-text { color:#4ade80; }
-.watch-text { color:#facc15; }
-.sig-item { font-size:12px; color:#888; padding:3px 0; line-height:1.5; }
-.sig-item strong { color:#ccc; font-family:monospace; }
+/* Suggest cloud */
+.suggest-cloud { display:flex; flex-wrap:wrap; gap:5px; margin:10px 0; }
+.suggest-cloud span { font-size:11px; padding:3px 8px; background:#111; border:1px solid #1a1a1a;
+  border-radius:6px; color:#888; }
 
-/* Empty */
+/* Trend sparkline (simple CSS bars) */
+.trend-bars { display:flex; align-items:flex-end; gap:2px; height:30px; margin:4px 0; }
+.trend-bars .bar { width:8px; background:#333; border-radius:1px; min-height:2px; }
+
+/* Signal list on daily page */
+.sig-row { display:flex; align-items:center; gap:10px; padding:8px 12px;
+  border-bottom:1px solid #111; font-size:13px; }
+.sig-row:last-child { border:none; }
+.sig-row .sig-rank { color:#444; font-size:11px; min-width:24px; }
+.sig-row .sig-verdict { min-width:50px; }
+.sig-row .sig-title { flex:1; color:#bbb; }
+.sig-row .sig-source { color:#555; font-size:11px; min-width:80px; }
+.sig-row .sig-reason { color:#555; font-size:11px; flex:1; max-width:300px; }
+.sig-row.is-go .sig-title { color:#4ade80; font-weight:600; }
+.sig-row.is-watch .sig-title { color:#facc15; }
+.sig-row a { color:inherit; text-decoration:none; }
+.sig-row a:hover .sig-title { color:#fff; }
+
+/* Detail blocks */
+.detail-block { background:#0d0d0d; border:1px solid #1a1a1a; border-radius:10px; padding:16px; margin-bottom:14px; }
+.detail-block h4 { font-size:13px; color:#666; margin-bottom:10px; text-transform:uppercase; letter-spacing:.5px; }
+.detail-text { font-size:13px; color:#999; line-height:1.7; }
+.detail-text strong { color:#ccc; }
+.next-steps { list-style:none; }
+.next-steps li { font-size:13px; color:#888; padding:4px 0; }
+.next-steps li::before { content:"→ "; color:#444; }
+
 .empty { text-align:center; color:#444; padding:30px; font-size:13px; }
 .empty code { background:#1a1a1a; padding:2px 6px; border-radius:4px; color:#888; }
-
-/* Footer */
 .footer { text-align:center; padding:20px 0; margin-top:20px; border-top:1px solid #111; }
 .footer p { font-size:10px; color:#333; }
-
-/* Pipeline */
-.pipeline { display:flex; align-items:center; justify-content:center; gap:6px;
-  margin:20px 0 30px; flex-wrap:wrap; }
-.pipeline .step { font-size:11px; color:#555; background:#111; padding:4px 10px;
-  border-radius:6px; border:1px solid #1a1a1a; }
-.pipeline .arrow { color:#333; font-size:12px; }
-
-@media(max-width:640px) {
-  .container { padding:12px 10px; }
-  .card { padding:12px 14px; }
-  .card-title { font-size:14px; }
-  .stats { flex-wrap:wrap; }
-}
+@media(max-width:640px) { .container { padding:12px 10px; } .card { padding:12px 14px; } }
 </style>
-</head><body>
-<div class="container">
-
-<div class="header">
-  <h1>SEO Knowledge Base</h1>
-  <p>需求挖掘 → 机会验证 → 建站 → 反馈闭环</p>
-  <div class="stats">
-    <span class="stat">🎯 <strong>1</strong> GO</span>
-    <span class="stat">📊 <strong>1</strong> 机会</span>
-    <span class="stat">📡 <strong>30</strong> 信号扫描</span>
-    <span class="stat">🕐 2026-03-14 20:21</span>
-  </div>
-</div>
-
-<div class="pipeline">
-  <span class="step">📡 RSS/Reddit/HN</span>
-  <span class="arrow">→</span>
-  <span class="step">🔍 信号提取</span>
-  <span class="arrow">→</span>
-  <span class="step">⚡ 5问过滤</span>
-  <span class="arrow">→</span>
-  <span class="step">📊 SEMrush验证</span>
-  <span class="arrow">→</span>
-  <span class="step">✅ GO / ❌ PASS</span>
-  <span class="arrow">→</span>
-  <span class="step">🚀 建站</span>
-</div>
-
-<section>
-  <h2><span class="dot" style="background:#22c55e"></span>机会 Opportunities</h2>
-  
-        <div class="card go">
+</head><body><div class="container">
+    <div class="header">
+      <h1>SEO Knowledge Base</h1>
+      <p>需求挖掘 → 机会验证 → 建站 → 反馈闭环</p>
+      <div class="stats">
+        <span class="stat">🟢 <strong>1</strong> GO</span>
+        <span class="stat">🟡 <strong>0</strong> WATCH</span>
+        <span class="stat">📡 <strong>30</strong> 信号扫描</span>
+        <span class="stat">🕐 2026-03-14 20:29</span>
+      </div>
+    </div>
+    <div class="pipeline">
+      <span class="step">📡 RSS/Reddit/HN</span><span class="arrow">→</span>
+      <span class="step">🔍 信号提取</span><span class="arrow">→</span>
+      <span class="step">⚡ 5问过滤</span><span class="arrow">→</span>
+      <span class="step">📊 SEMrush验证</span><span class="arrow">→</span>
+      <span class="step">✅ GO / ❌ PASS</span><span class="arrow">→</span>
+      <span class="step">🚀 建站</span>
+    </div>
+    <section><h2><span class="dot" style="background:#22c55e"></span>机会 Opportunities</h2>
+        <a class="card go" href="opportunities/run-ai-locally.html">
+          <span class="card-arrow">→</span>
           <div class="card-header">
-            <span class="verdict-badge go">🟢 GO</span>
+            <span class="badge go">🟢 GO</span>
             <span class="slug">run-ai-locally</span>
             <span class="date">2026-03-14</span>
           </div>
@@ -130,36 +133,23 @@ section h2 .dot { width:6px; height:6px; border-radius:50%; }
           <div class="card-meta">
             <span class="tag">how_to</span>
             <span class="tag">tutorial</span>
-            <span class="platforms">HackerNews</span>
+            <span class="tag">KD:22 Vol:210 CPC:$3.48</span>
           </div>
-          <div class="evidence">HN 热帖 + Google Suggest 165 个补全词，需求巨大且持续</div>
-          <table class="kw-table"><thead><tr><th>Keyword</th><th>KD</th><th>Vol</th><th>CPC</th></tr></thead><tbody><tr><td class="kw">run ai locally</td><td>22</td><td>210</td><td>$3.48</td></tr>
-<tr><td class="kw">best ai to run locally</td><td>18</td><td>30</td><td>$4.9</td></tr>
-<tr><td class="kw">ollama tutorial</td><td>43</td><td>390</td><td>$1.85</td></tr>
-<tr><td class="kw">run llm on mac</td><td>—</td><td>10</td><td>—</td></tr>
-</tbody></table>
-          <div class="plan"><strong>内容计划:</strong> 本地 AI 搭建完整教程 + 各模型对比 + 硬件推荐</div>
-          <div class="plan"><strong>变现:</strong> 硬件 affiliate (GPU/Mac), AI 课程推广</div>
-        </div>
-</section>
-
-<section>
-  <h2><span class="dot" style="background:#3b82f6"></span>信号日志 Signal Log</h2>
-  
-        <div class="signal-day">
-          <div class="signal-header">
-            <span class="signal-date">2026-03-14</span>
-            <span class="signal-stats">
-              扫描 30 · <span class="go-text">1 GO</span> · <span class="watch-text">2 WATCH</span> · 27 PASS
-            </span>
+          <div class="card-kw"> <code>run ai locally</code> <code>best ai to run locally</code> <code>ollama tutorial</code></div>
+        </a></section>
+    <section><h2><span class="dot" style="background:#3b82f6"></span>信号日志 Signal Log</h2>
+        <a class="card" href="signals/2026-03-14.html" style="border-left:3px solid #3b82f6">
+          <span class="card-arrow">→</span>
+          <div class="card-header">
+            <span class="badge" style="background:#0c1f3f;color:#60a5fa">📡 2026-03-14</span>
+            <span class="date">扫描 30 条</span>
           </div>
-          <div class="sig-item go">🟢 <strong>run ai locally</strong> KD:22 Vol:210 — 165 suggest补全, KD22可排, CPC $3.48有变现</div><div class="sig-item watch">🟡 <strong>desktop ai agent</strong> KD:74 Vol:70 — 需求真实(60 suggest)但KD太高, 找长尾变体</div><div class="sig-item watch">🟡 <strong>logi options plus alternative</strong> KD:None Vol:20 — 量太小, 除非做bloatware alternatives聚合</div>
-        </div>
-</section>
-
-<div class="footer">
-  <p>seo-knowledge · auto-generated by build_site.py</p>
-</div>
-
-</div>
-</body></html>
+          <div class="card-meta">
+            <span class="tag" style="border-color:#22c55e40;color:#4ade80">1 GO</span>
+            <span class="tag" style="border-color:#eab30840;color:#facc15">2 WATCH</span>
+            <span class="tag">27 PASS</span>
+          </div>
+          <div style="font-size:12px;color:#4ade80;padding:2px 0">🟢 Can I run AI locally?</div><div style="font-size:12px;color:#facc15;padding:2px 0">🟡 Understudy – Teach a desktop agent by demonstrating a task once</div><div style="font-size:12px;color:#facc15;padding:2px 0">🟡 Mouser: An open source alternative to Logi-Plus mouse software</div>
+        </a></section>
+<div class="footer"><p>seo-knowledge · auto-generated by build_site.py</p></div>
+</div></body></html>

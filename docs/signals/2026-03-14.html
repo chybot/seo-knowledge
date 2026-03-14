@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Signal 2026-03-14 — SEO Knowledge Base</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;
+  background:#0a0a0a; color:#e0e0e0; -webkit-font-smoothing:antialiased; }
+a { color:#60a5fa; text-decoration:none; } a:hover { text-decoration:underline; }
+.container { max-width:940px; margin:0 auto; padding:20px 16px; }
+.header { text-align:center; padding:40px 0 24px; border-bottom:1px solid #1a1a1a; margin-bottom:28px; }
+.header h1 { font-size:24px; font-weight:700; color:#fff; letter-spacing:-.3px; }
+.header p { color:#555; font-size:13px; margin-top:6px; }
+.breadcrumb { font-size:12px; color:#555; margin-bottom:20px; }
+.breadcrumb a { color:#666; }
+.stats { display:flex; justify-content:center; gap:10px; margin-top:14px; flex-wrap:wrap; }
+.stat { font-size:12px; color:#666; background:#111; padding:4px 12px; border-radius:16px; border:1px solid #1a1a1a; }
+.stat strong { color:#aaa; }
+.pipeline { display:flex; align-items:center; justify-content:center; gap:6px; margin:20px 0 30px; flex-wrap:wrap; }
+.pipeline .step { font-size:11px; color:#555; background:#111; padding:4px 10px; border-radius:6px; border:1px solid #1a1a1a; }
+.pipeline .arrow { color:#333; font-size:12px; }
+section { margin-bottom:36px; }
+section h2 { font-size:16px; font-weight:600; color:#888; margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+section h2 .dot { width:6px; height:6px; border-radius:50%; }
+section h3 { font-size:14px; color:#aaa; margin:18px 0 10px; }
+
+/* Cards */
+.card { background:#0d0d0d; border:1px solid #1a1a1a; border-radius:12px;
+  padding:16px 18px; margin-bottom:10px; transition:border-color .15s; cursor:pointer; display:block; text-decoration:none !important; color:inherit; }
+.card:hover { border-color:#333; }
+.card.go { border-left:3px solid #22c55e; }
+.card.watch { border-left:3px solid #eab308; }
+.card.pass { border-left:3px solid #555; }
+.card-header { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.badge { font-size:10px; padding:2px 8px; border-radius:4px; font-weight:600; }
+.badge.go { background:#052e16; color:#4ade80; }
+.badge.watch { background:#2a1f00; color:#facc15; }
+.badge.pass { background:#1a1a1a; color:#666; }
+.slug { font-size:12px; color:#555; font-family:monospace; }
+.date { font-size:11px; color:#444; margin-left:auto; }
+.card-title { font-size:15px; font-weight:600; color:#eee; line-height:1.4; margin-bottom:6px; }
+.card-meta { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px; }
+.tag { font-size:10px; padding:2px 8px; border-radius:10px; background:#1a1a1a; color:#888; border:1px solid #252525; }
+.card-detail { font-size:12px; color:#666; line-height:1.6; }
+.card-kw { font-size:12px; color:#777; margin-top:6px; }
+.card-kw code { background:#111; padding:1px 5px; border-radius:3px; color:#aaa; font-size:11px; }
+.card-arrow { float:right; color:#333; font-size:14px; margin-top:4px; }
+
+/* Tables */
+.kw-table { width:100%; font-size:12px; border-collapse:collapse; margin:10px 0; }
+.kw-table th { text-align:left; color:#555; font-weight:500; padding:6px 10px; border-bottom:1px solid #1a1a1a; }
+.kw-table td { padding:6px 10px; color:#aaa; border-bottom:1px solid #111; }
+.kw-table td.kw { color:#ddd; font-family:monospace; }
+.kw-table tr:last-child td { border-bottom:none; }
+.kw-table td.good { color:#4ade80; }
+.kw-table td.warn { color:#facc15; }
+.kw-table td.bad { color:#f87171; }
+
+/* Filter checklist */
+.filter-list { list-style:none; margin:10px 0; }
+.filter-list li { font-size:13px; color:#888; padding:6px 10px; border-bottom:1px solid #111; line-height:1.5; }
+.filter-list li:last-child { border:none; }
+.filter-list .pass-icon { color:#4ade80; }
+.filter-list .fail-icon { color:#f87171; }
+.filter-list .warn-icon { color:#facc15; }
+
+/* Suggest cloud */
+.suggest-cloud { display:flex; flex-wrap:wrap; gap:5px; margin:10px 0; }
+.suggest-cloud span { font-size:11px; padding:3px 8px; background:#111; border:1px solid #1a1a1a;
+  border-radius:6px; color:#888; }
+
+/* Trend sparkline (simple CSS bars) */
+.trend-bars { display:flex; align-items:flex-end; gap:2px; height:30px; margin:4px 0; }
+.trend-bars .bar { width:8px; background:#333; border-radius:1px; min-height:2px; }
+
+/* Signal list on daily page */
+.sig-row { display:flex; align-items:center; gap:10px; padding:8px 12px;
+  border-bottom:1px solid #111; font-size:13px; }
+.sig-row:last-child { border:none; }
+.sig-row .sig-rank { color:#444; font-size:11px; min-width:24px; }
+.sig-row .sig-verdict { min-width:50px; }
+.sig-row .sig-title { flex:1; color:#bbb; }
+.sig-row .sig-source { color:#555; font-size:11px; min-width:80px; }
+.sig-row .sig-reason { color:#555; font-size:11px; flex:1; max-width:300px; }
+.sig-row.is-go .sig-title { color:#4ade80; font-weight:600; }
+.sig-row.is-watch .sig-title { color:#facc15; }
+.sig-row a { color:inherit; text-decoration:none; }
+.sig-row a:hover .sig-title { color:#fff; }
+
+/* Detail blocks */
+.detail-block { background:#0d0d0d; border:1px solid #1a1a1a; border-radius:10px; padding:16px; margin-bottom:14px; }
+.detail-block h4 { font-size:13px; color:#666; margin-bottom:10px; text-transform:uppercase; letter-spacing:.5px; }
+.detail-text { font-size:13px; color:#999; line-height:1.7; }
+.detail-text strong { color:#ccc; }
+.next-steps { list-style:none; }
+.next-steps li { font-size:13px; color:#888; padding:4px 0; }
+.next-steps li::before { content:"→ "; color:#444; }
+
+.empty { text-align:center; color:#444; padding:30px; font-size:13px; }
+.empty code { background:#1a1a1a; padding:2px 6px; border-radius:4px; color:#888; }
+.footer { text-align:center; padding:20px 0; margin-top:20px; border-top:1px solid #111; }
+.footer p { font-size:10px; color:#333; }
+@media(max-width:640px) { .container { padding:12px 10px; } .card { padding:12px 14px; } }
+</style>
+</head><body><div class="container"><div class="breadcrumb"><a href="../index.html">首页</a> / 信号 2026-03-14</div>
+    <h1 style="font-size:20px;color:#fff;margin-bottom:6px">📡 信号日报 2026-03-14</h1>
+    <div class="card-meta" style="margin-bottom:20px">
+      <span class="tag" style="border-color:#22c55e40;color:#4ade80">1 GO</span>
+      <span class="tag" style="border-color:#eab30840;color:#facc15">2 WATCH</span>
+      <span class="tag">27 PASS</span>
+      <span class="tag">共扫描 30 条</span>
+    </div>
+    <div class="detail-block" style="padding:0">
+      
+        <div class="sig-row is-go">
+          <a href="../opportunities/run-ai-locally.html">
+          <span class="sig-rank">#1</span>
+          <span class="sig-verdict"><span class="badge go">🟢 GO</span></span>
+          <span class="sig-title">Can I run AI locally?</span>
+          <span class="sig-source">HackerNews</span>
+          </a>
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">KD22 + Vol210 + CPC$3.48 + 165个suggest补全 → GO。教程站，硬件affiliate变现。</span>
+        </div>
+        <div style="padding:8px 12px 4px 36px;font-size:11px;color:#555;line-height:1.8;border-bottom:1px solid #111">
+              <div><span style="margin-right:12px">✅ 用户会搜 'how to run ai locally', 'run llm on my computer'</span><span style="margin-right:12px">✅ 立刻能想出 5+ 个 long-tail 词</span><span style="margin-right:12px">✅ 教程类内容，个人站可以排</span><span style="margin-right:12px">✅ 隐私+成本驱动，持续需求</span><span style="margin-right:12px">✅ 硬件 affiliate(GPU/Mac) + AI 课程</span></div>
+              <div>Google Suggest: 165 个补全</div>
+              <div>Metrics: run ai locally KD:22 Vol:210 | best ai to run locally KD:18 Vol:30 | ollama tutorial KD:43 Vol:390</div>
+            </div>
+        <div class="sig-row is-watch">
+          <a href="../opportunities/desktop-ai-agent.html">
+          <span class="sig-rank">#2</span>
+          <span class="sig-verdict"><span class="badge watch">🟡 WATCH</span></span>
+          <span class="sig-title">Understudy – Teach a desktop agent by demonstrating a task once</span>
+          <span class="sig-source">HN Show</span>
+          </a>
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">需求真实(60 suggest, CPC$7.64高)，但主词KD74太高。需找更长尾变体如 'open source desktop ai agent', 'free ai desktop automation tool'。观察。</span>
+        </div>
+        <div style="padding:8px 12px 4px 36px;font-size:11px;color:#555;line-height:1.8;border-bottom:1px solid #111">
+              <div><span style="margin-right:12px">✅ 用户会搜 'ai desktop agent', 'desktop automation ai'</span><span style="margin-right:12px">✅ desktop ai agent, ai agent for desktop, ai task automation</span><span style="margin-right:12px">⚠️ KD74 太高，主词排不上</span><span style="margin-right:12px">✅ AI agent 赛道持续热</span><span style="margin-right:12px">✅ SaaS affiliate, CPC $7.64</span></div>
+              <div>Google Suggest: 60 个补全</div>
+              <div>Metrics: desktop ai agent KD:74 Vol:70 | ai agent for desktop KD:None Vol:20</div>
+            </div>
+        <div class="sig-row is-watch">
+          <a href="../opportunities/logi-options-alternative.html">
+          <span class="sig-rank">#3</span>
+          <span class="sig-verdict"><span class="badge watch">🟡 WATCH</span></span>
+          <span class="sig-title">Mouser: An open source alternative to Logi-Plus mouse software</span>
+          <span class="sig-source">HackerNews</span>
+          </a>
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">量太小(Vol20)，CPC为0无变现。除非做更大的 'bloatware alternatives' 聚合站。观察。</span>
+        </div>
+        <div style="padding:8px 12px 4px 36px;font-size:11px;color:#555;line-height:1.8;border-bottom:1px solid #111">
+              <div><span style="margin-right:12px">✅ Logitech 用户确实在搜替代品</span><span style="margin-right:12px">✅ logi options plus alternative, logitech software alternative</span><span style="margin-right:12px">✅ 无数据 = 低竞争</span><span style="margin-right:12px">✅ 只要 Logi 软件还臃肿就有需求</span><span style="margin-right:12px">⚠️ CPC $0，变现路径不清晰</span></div>
+              <div>Google Suggest: 12 个补全</div>
+              <div>Metrics: logi options plus alternative KD:None Vol:20 | logitech software alternative KD:None Vol:20</div>
+            </div>
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#4</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">Axe – A 12MB binary that replaces your AI framework</span>
+          <span class="sig-source">HN Show</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: Google Suggest 0 个补全，无搜索需求。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#5</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">Tell HN: Apple development certificate server seems down?</span>
+          <span class="sig-source">HN Ask</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 一次性服务器故障事件，不可持续。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#6</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">s@: decentralized social networking over static sites</span>
+          <span class="sig-source">HN Show</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 太小众，去中心化社交搜索量极低。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#7</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">OneCLI – Vault for AI Agents in Rust</span>
+          <span class="sig-source">HN Show</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 单个小工具，无通用搜索需求。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#8</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">What was the world listening to? Music charts, 20 countries (1940–2025)</span>
+          <span class="sig-source">HN Show</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 数据可视化项目，不产生持续搜索需求。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#9</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">Using Thunderbird for RSS</span>
+          <span class="sig-source">HackerNews</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 老话题，Thunderbird RSS 使用量稳定但极小。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#10</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">Elon Musk pushes out more xAI founders as AI coding effort falters</span>
+          <span class="sig-source">HackerNews</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 八卦/人事新闻，不产生可持续搜索需求。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#11</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">Coding after coders: The end of computer programming as we know it?</span>
+          <span class="sig-source">HackerNews</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 纯观点讨论文章，无可执行的搜索意图。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#12</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">Digg is gone again</span>
+          <span class="sig-source">HackerNews</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 一次性新闻事件。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#13</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">Parallels confirms MacBook Neo can run Windows in a virtual machine</span>
+          <span class="sig-source">HackerNews</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 品牌词(Parallels+MacBook)，SERP被官网垄断。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#14</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">I found 39 Algolia admin keys exposed across open source documentation sites</span>
+          <span class="sig-source">HackerNews</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 一次性安全事件，不可持续。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#15</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">Hammerspoon</span>
+          <span class="sig-source">HackerNews</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 小众 macOS 自动化工具，存量市场极小。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#16</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">Wired headphone sales are exploding</span>
+          <span class="sig-source">HackerNews</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 消费品类太大，品牌词垄断 SERP。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#17</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">Channel Surfer – Watch YouTube like it's cable TV</span>
+          <span class="sig-source">HackerNews</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 单个产品，无通用搜索需求。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#18</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">Qatar helium shutdown puts chip supply chain on a two-week clock</span>
+          <span class="sig-source">HackerNews</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 供应链新闻，一次性事件。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#19</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">A Survival Guide to a PhD (2016)</span>
+          <span class="sig-source">HackerNews</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 2016年老文重新上HN，无新意。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#20</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">Demis Hassabis &amp; John Jumper awarded Nobel Prize in Chemistry</span>
+          <span class="sig-source">DeepMind Blog</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 新闻事件，品牌词。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#21</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">New generative AI tools open the doors of music creation</span>
+          <span class="sig-source">DeepMind Blog</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: Google官方博客，品牌词垄断。'ai music generator'可能有机会但不在本次范围。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#22</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">Pushing the frontiers of audio generation</span>
+          <span class="sig-source">DeepMind Blog</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 研究进展，无直接搜索需求。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#23</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">The AI for Science Forum: A new era of discovery</span>
+          <span class="sig-source">DeepMind Blog</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 会议活动，无持续搜索需求。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#24</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">AlphaQubit tackles one of quantum computing's biggest challenges</span>
+          <span class="sig-source">DeepMind Blog</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 前沿研究，品牌词，无可执行SEO机会。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#25</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">Genie 2: A large-scale foundation world model</span>
+          <span class="sig-source">DeepMind Blog</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: Google产品发布，品牌词。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#26</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">GenCast predicts weather and the risks of extreme conditions</span>
+          <span class="sig-source">DeepMind Blog</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 研究论文，无用户搜索需求。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#27</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">Google DeepMind at NeurIPS 2024</span>
+          <span class="sig-source">DeepMind Blog</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 会议总结，品牌词。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#28</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">Introducing Gemini 2.0: our new AI model for the agentic era</span>
+          <span class="sig-source">DeepMind Blog</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: Google官方发布，品牌词完全垄断。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#29</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">State-of-the-art video and image generation with Veo 2 and Imagen 3</span>
+          <span class="sig-source">DeepMind Blog</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: Google产品，品牌词。</span>
+        </div>
+        
+        <div class="sig-row ">
+          
+          <span class="sig-rank">#30</span>
+          <span class="sig-verdict"><span class="badge pass">❌ PASS</span></span>
+          <span class="sig-title">FACTS Grounding: A new benchmark for evaluating LLM factuality</span>
+          <span class="sig-source">DeepMind Blog</span>
+          
+        </div>
+        <div class="sig-row" style="padding-left:36px;padding-top:0;padding-bottom:2px">
+          <span style="font-size:11px;color:#555">PASS: 学术benchmark，无用户搜索意图。</span>
+        </div>
+        
+    </div>
+<div class="footer"><p>seo-knowledge · auto-generated by build_site.py</p></div>
+</div></body></html>

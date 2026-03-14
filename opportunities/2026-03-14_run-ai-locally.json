@@ -7,24 +7,91 @@
     "topic_tag": "ai",
     "demand_type": "how_to",
     "urgency": "low",
+    "urgency_reason": "稳定需求，隐私+成本驱动，不急但持续",
     "platforms": ["HackerNews"],
     "source_count": 1,
     "evidence": "HN 热帖 + Google Suggest 165 个补全词，需求巨大且持续"
   },
-  "validation": {
-    "top_keywords": [
-      {"keyword": "run ai locally", "kd": 22, "volume": 210, "cpc": 3.48},
-      {"keyword": "best ai to run locally", "kd": 18, "volume": 30, "cpc": 4.9},
-      {"keyword": "ollama tutorial", "kd": 43, "volume": 390, "cpc": 1.85},
-      {"keyword": "run llm on mac", "kd": null, "volume": 10, "cpc": 0}
-    ],
-    "suggest_count": 165,
-    "verdict": "GO"
+  "filter": {
+    "search_intent": {"pass": true, "detail": "用户会搜 'how to run ai locally', 'run llm on my computer' — 明确的 how-to 搜索意图"},
+    "keywords_exist": {"pass": true, "detail": "立刻能想出 5+ 个 long-tail 词: run ai locally, best ai to run locally, local ai setup, run llm on mac, ollama tutorial"},
+    "small_site_can_rank": {"pass": true, "detail": "教程类内容，个人技术站完全可以排。非品牌词，非电商词"},
+    "sustainable": {"pass": true, "detail": "隐私意识 + AI API 成本 → 本地运行需求只会增长。不是一次性热点"},
+    "monetizable": {"pass": true, "detail": "硬件 affiliate (GPU显卡 $500-2000, MacBook), AI 课程推广, 广告 (CPC $3.48)"}
   },
+  "suggest": {
+    "count": 165,
+    "top_30": [
+      "best ai to run locally 2025",
+      "best ai to run locally for coding",
+      "best computer to run ai locally",
+      "best locally run ai image generator",
+      "best locally run ai models",
+      "best way to run ai locally",
+      "can you run ai locally",
+      "can you run ai locally for free",
+      "can you run ai locally on mac",
+      "can you run ai locally on android",
+      "does apple ai run locally",
+      "does cursor run ai locally",
+      "does galaxy ai run locally",
+      "does running ai locally cost money",
+      "easiest way to run ai locally",
+      "hardware needed to run ai locally",
+      "how to run ai locally",
+      "how to run ai locally on mac",
+      "how to run ai locally on windows",
+      "how to run ai models locally",
+      "how to run generative ai locally",
+      "run ai chatbot locally",
+      "run ai image generation locally",
+      "run ai locally free",
+      "run ai locally on mac",
+      "run ai locally on raspberry pi",
+      "run ai locally on windows",
+      "run ai locally reddit",
+      "run ai models locally gpu",
+      "what do you need to run ai locally"
+    ]
+  },
+  "metrics": [
+    {
+      "keyword": "run ai locally", "kd": 22, "volume": 210, "cpc": 3.48,
+      "competition": 0.06,
+      "trend": [34, 53, 100, 65, 65, 81, 53, 65, 81, 65, 65, 65],
+      "trend_note": "3个月前spike后稳定在高位，典型的sustained interest"
+    },
+    {
+      "keyword": "best ai to run locally", "kd": 18, "volume": 30, "cpc": 4.90,
+      "competition": 0.21,
+      "trend": [28, 71, 100, 28, 57, 28, 28, 28, 28, 28, 28, 28],
+      "trend_note": "波动大但CPC高，说明商业价值好"
+    },
+    {
+      "keyword": "ollama tutorial", "kd": 43, "volume": 390, "cpc": 1.85,
+      "competition": 0.05,
+      "trend": [44, 100, 81, 66, 54, 54, 54, 44, 44, 36, 54, 44],
+      "trend_note": "量最大但KD43偏高，做为辅助词不做主攻"
+    },
+    {
+      "keyword": "run llm on mac", "kd": null, "volume": 10, "cpc": 0,
+      "competition": 0.01,
+      "trend": [0, 100, 0, 50, 0, 50, 50, 0, 0, 0, 0, 0],
+      "trend_note": "量太小且不稳定，但可做为长尾覆盖"
+    }
+  ],
   "action": {
     "site_type": "tutorial",
-    "target_keywords": ["run ai locally", "best ai to run locally", "local ai setup guide"],
-    "content_plan": "本地 AI 搭建完整教程 + 各模型对比 + 硬件推荐",
-    "monetization": "硬件 affiliate (GPU/Mac), AI 课程推广"
+    "primary_keywords": ["run ai locally", "best ai to run locally"],
+    "secondary_keywords": ["how to run ai locally on mac", "run ai locally free", "ollama tutorial"],
+    "content_plan": "本地 AI 搭建完整教程 + 各模型对比(Ollama/LM Studio/llama.cpp) + 硬件推荐 + 各平台指南(Mac/Windows/Linux)",
+    "monetization": "硬件 affiliate (GPU/Mac), AI 课程推广, Google AdSense",
+    "estimated_pages": 5,
+    "next_steps": [
+      "跑完整 pipeline 扩展更多长尾词",
+      "SERP 分析看竞争对手都是谁",
+      "确定内容结构和页面规划",
+      "建站"
+    ]
   }
 }
