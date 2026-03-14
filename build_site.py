@@ -411,6 +411,108 @@ def build_opportunity_page(opp):
           {f"<ul class='next-steps'>{steps}</ul>" if steps else ""}
         </div></div>'''
 
+    # SERP analysis
+    serp = opp.get("serp_analysis", {})
+    serp_html = ""
+    if serp:
+        # Organic results table
+        organic_rows = ""
+        top_domains = serp.get("top_domains", [])
+        for i, d in enumerate(top_domains[:10]):
+            domain = _esc(d)
+            is_small = not any(big in d for big in ["forbes", "techradar", "nytimes", "wikipedia", "amazon", "google"])
+            cls = "good" if ("reddit" in d or is_small) else ""
+            organic_rows += f'<tr><td>#{i+1}</td><td class="{cls}">{domain}</td></tr>'
+
+        # Flags
+        flags = []
+        if serp.get("small_site_in_top10"):
+            flags.append('<span class="tag" style="border-color:#22c55e40;color:#4ade80">✅ 小站能排</span>')
+        if serp.get("reddit_ranking"):
+            flags.append('<span class="tag" style="border-color:#ff450040;color:#ff6b6b">🔥 Reddit 在排名</span>')
+        if serp.get("ai_overview"):
+            flags.append('<span class="tag" style="border-color:#a855f740;color:#c084fc">⚡ AI Overview</span>')
+        else:
+            flags.append('<span class="tag" style="border-color:#22c55e40;color:#4ade80">✅ 无 AI Overview</span>')
+
+        intent = _esc(serp.get("intent", ""))
+        intent_icon = {"comparison": "⚖️", "tool": "🛠️", "informational": "📖", "commercial": "💰"}.get(intent, "🔍")
+        note = _esc(serp.get("opportunity_note", ""))
+
+        # Related searches
+        related = serp.get("related_searches", [])
+        related_html = ""
+        if related:
+            related_html = '<div style="margin-top:10px"><strong>Related Searches:</strong><div class="suggest-cloud" style="margin-top:6px">'
+            for r in related:
+                related_html += f'<span>{_esc(r)}</span>'
+            related_html += '</div></div>'
+
+        serp_html = f'''<div class="detail-block"><h4>🔍 SERP 分析（Google 搜索结果）</h4>
+          <div class="detail-text">
+            <p><strong>搜索意图:</strong> {intent_icon} {intent}</p>
+            <div style="margin:8px 0">{" ".join(flags)}</div>
+            {f'<p style="color:#aaa;margin:8px 0">💡 {note}</p>' if note else ''}
+          </div>
+          <table class="kw-table" style="max-width:300px"><thead><tr><th>#</th><th>Domain</th></tr></thead><tbody>{organic_rows}</tbody></table>
+          {related_html}
+        </div>'''
+
+    # Trends analysis
+    trends = opp.get("trends", {})
+    trends_html = ""
+    if trends:
+        lc = trends.get("lifecycle", "")
+        avg = trends.get("avg_interest", trends.get("avg", ""))
+        peak = trends.get("peak", trends.get("peak_interest", ""))
+        note = _esc(trends.get("note", ""))
+        icon = {"new": "🆕", "sustained_growth": "📈", "stable": "➡️",
+                "declining": "📉", "flash": "⚡", "seasonal": "🔄"}.get(lc, "❓")
+        lc_color = {"new": "#4ade80", "sustained_growth": "#4ade80", "stable": "#888",
+                    "declining": "#f87171", "flash": "#facc15", "seasonal": "#60a5fa"}.get(lc, "#888")
+        trends_html = f'''<div class="detail-block"><h4>📈 Google Trends</h4>
+          <div class="detail-text">
+            <p><strong>生命周期:</strong> <span style="color:{lc_color}">{icon} {lc}</span></p>
+            {f'<p><strong>平均热度:</strong> {avg} | <strong>峰值:</strong> {peak}</p>' if avg else ''}
+            {f'<p style="color:#666">{note}</p>' if note else ''}
+          </div>
+        </div>'''
+
+    # Reddit analysis
+    reddit = opp.get("reddit", {})
+    reddit_html = ""
+    if reddit:
+        rd_query = _esc(reddit.get("query", ""))
+        rd_posts = reddit.get("posts_found", "")
+        rd_top = _esc(reddit.get("top_post", ""))
+        rd_pain = _esc(reddit.get("key_pain_point", ""))
+        rd_insight = _esc(reddit.get("key_insight", ""))
+        reddit_html = f'''<div class="detail-block"><h4>💬 Reddit 需求验证</h4>
+          <div class="detail-text">
+            {f'<p><strong>搜索词:</strong> {rd_query}</p>' if rd_query else ''}
+            {f'<p><strong>找到帖子:</strong> {rd_posts} 篇</p>' if rd_posts else ''}
+            {f'<p><strong>热帖:</strong> {rd_top}</p>' if rd_top else ''}
+            {f'<p><strong>用户痛点:</strong> <span style="color:#facc15">{rd_pain}</span></p>' if rd_pain else ''}
+            {f'<p><strong>关键洞察:</strong> <span style="color:#60a5fa">{rd_insight}</span></p>' if rd_insight else ''}
+          </div>
+        </div>'''
+
+    # Signal source
+    source_html = ""
+    platforms = sig.get("platforms", [])
+    urgency = sig.get("urgency", "")
+    urgency_reason = sig.get("urgency_reason", "")
+    urgency_icon = {"high": "🔴", "medium": "🟡", "low": "🟢"}.get(urgency, "")
+    if platforms or urgency:
+        source_html = f'''<div class="detail-block"><h4>📡 信号来源</h4>
+          <div class="detail-text">
+            <p><strong>来源平台:</strong> {", ".join(platforms)}</p>
+            <p><strong>需求类型:</strong> {_esc(sig.get("demand_type",""))}</p>
+            {f'<p><strong>紧急度:</strong> {urgency_icon} {urgency} — {_esc(urgency_reason)}</p>' if urgency else ''}
+            <p><strong>证据:</strong> {_esc(sig.get("evidence",""))}</p>
+          </div>
+        </div>'''
+
     body = f'''
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
       <span class="badge {vc}" style="font-size:14px;padding:4px 12px">{vi} {v}</span>
@@ -419,14 +521,17 @@ def build_opportunity_page(opp):
     <div class="card-meta" style="margin-bottom:20px">
       <span class="tag">{_esc(sig.get("demand_type",""))}</span>
       <span class="tag">{_esc(act.get("site_type",""))}</span>
-      <span class="tag">{", ".join(sig.get("platforms",[]))}</span>
+      <span class="tag">{", ".join(platforms)}</span>
       <span class="tag">{_esc(opp.get("discovered_at",""))}</span>
     </div>
-    <div class="detail-text" style="margin-bottom:20px">{_esc(sig.get("evidence",""))}</div>
 
+    {source_html}
     <section><h3>5 问过滤</h3>{filter_html}</section>
     {suggest_html}
     {metrics_html}
+    {trends_html}
+    {serp_html}
+    {reddit_html}
     {action_html}'''
 
     bc = ['<a href="../index.html">首页</a>', f'{slug}']
