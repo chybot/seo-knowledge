@@ -1,0 +1,61 @@
+{
+  "slug": "claude-code-vs-cursor",
+  "discovered_at": "2026-03-14",
+  "verdict": "GO",
+  "signal": {
+    "topic_title": "Claude Code vs Cursor — AI coding tool comparison",
+    "topic_tag": "ai",
+    "demand_type": "comparison",
+    "urgency": "high",
+    "urgency_reason": "AI coding tool赛道正火，Claude Code/Cursor/Windsurf竞争激烈，用户在积极对比",
+    "platforms": ["HackerNews", "Reddit"],
+    "source_count": 3,
+    "evidence": "种子:#2 Rudel Claude Code Analytics → Reddit扩充发现 r/ChatGPT 1669⬆帖讨论Claude vs GPT, 用户痛点是选择困难"
+  },
+  "filter": {
+    "search_intent": {"pass": true, "detail": "用户在Google搜'claude code vs cursor'做购买决策，明确的comparison intent"},
+    "keywords_exist": {"pass": true, "detail": "claude code vs cursor (3600), how to use claude code (1900), claude code tips (260)"},
+    "small_site_can_rank": {"pass": true, "detail": "KD25，对比类内容个人站可以排，非品牌垄断"},
+    "sustainable": {"pass": true, "detail": "AI coding tool赛道持续增长，每次产品更新都会触发新一轮对比搜索"},
+    "monetizable": {"pass": true, "detail": "CPC $6.32极高，SaaS affiliate (Cursor $20/月, Claude Pro $20/月)"}
+  },
+  "suggest": {
+    "count": 116,
+    "top_30": ["claude code vs cursor", "claude code tips and tricks", "claude code tutorial", "claude code best practices", "claude code vs windsurf", "claude code setup guide", "claude code for beginners", "claude code pricing", "claude code review", "how to use claude code effectively"]
+  },
+  "metrics": [
+    {
+      "keyword": "claude code vs cursor", "kd": 25, "volume": 3600, "cpc": 6.32,
+      "trend_note": "新词，2025年起爆发增长"
+    },
+    {
+      "keyword": "how to use claude code", "kd": 59, "volume": 1900, "cpc": 4.36,
+      "trend_note": "量大但KD偏高，做辅助词"
+    },
+    {
+      "keyword": "claude code tips", "kd": 53, "volume": 260, "cpc": 4.94,
+      "trend_note": "KD偏高，可做长尾覆盖"
+    }
+  ],
+  "reddit": {
+    "query": "claude code analytics session",
+    "posts_found": 30,
+    "top_post": "After 3 years with ChatGPT, I tried Claude and Gemini (1669⬆ 550💬)",
+    "key_pain_point": "用户在Claude/GPT/Gemini间选择困难，需要对比内容",
+    "key_insight": "Reddit用户说'stop treating it like a chat, start treating it like a dev tool'"
+  },
+  "action": {
+    "site_type": "comparison",
+    "primary_keywords": ["claude code vs cursor", "claude code vs windsurf"],
+    "secondary_keywords": ["how to use claude code", "claude code tips", "best ai coding tool 2026"],
+    "content_plan": "全面对比页(功能/价格/适用场景) + 各工具深度评测 + 使用技巧教程",
+    "monetization": "SaaS affiliate (Cursor/Claude/Windsurf各$20/月), Google AdSense (CPC $6.32)",
+    "estimated_pages": 5,
+    "next_steps": [
+      "跑完整 pipeline 扩展长尾词",
+      "SERP分析看竞争对手",
+      "建对比站: 首页对比表 + 各工具详细评测页",
+      "加入affiliate链接"
+    ]
+  }
+}
