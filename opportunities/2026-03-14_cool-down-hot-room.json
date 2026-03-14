@@ -1,0 +1,21 @@
+{
+  "slug": "cool-down-hot-room",
+  "discovered_at": "2026-03-14",
+  "verdict": "GO",
+  "signal": {
+    "topic_title": "My room gets stupid hot in the afternoon and I'm losing my mind",
+    "demand_type": "how_to",
+    "urgency": "medium",
+    "platforms": ["r/HomeImprovement"],
+    "evidence": "KD24+Vol210, 季节性但夏天爆发"
+  },
+  "metrics": [
+    {"keyword": "how to cool down a hot room", "kd": 24, "volume": 210, "cpc": 0.12}
+  ],
+  "action": {
+    "site_type": "tutorial",
+    "primary_keywords": ["how to cool down a hot room", "room too hot solutions", "cool room without ac"],
+    "content_plan": "房间降温方案: 窗膜/风扇/遮光帘/便携空调对比",
+    "monetization": "便携空调affiliate($200-500), 遮光帘, 窗膜"
+  }
+}

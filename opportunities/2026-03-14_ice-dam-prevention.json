@@ -1,0 +1,22 @@
+{
+  "slug": "ice-dam-prevention",
+  "discovered_at": "2026-03-14",
+  "verdict": "GO",
+  "signal": {
+    "topic_title": "Vaulted ceilings + ice dams — would spray foam hot roof help?",
+    "demand_type": "how_to",
+    "urgency": "low",
+    "platforms": ["r/HomeImprovement"],
+    "evidence": "164个Google Suggest补全, 季节性但每年回来"
+  },
+  "metrics": [
+    {"keyword": "ice dam prevention", "kd": 23, "volume": 720, "cpc": 1.76}
+  ],
+  "suggest": {"count": 164},
+  "action": {
+    "site_type": "tutorial",
+    "primary_keywords": ["ice dam prevention", "how to prevent ice dams", "ice dam removal"],
+    "content_plan": "冰坝完整指南: 成因/预防/移除/产品推荐",
+    "monetization": "家装产品affiliate(加热线缆$50-200, 屋顶耙$30-80)"
+  }
+}

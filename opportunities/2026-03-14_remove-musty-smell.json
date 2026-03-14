@@ -1,0 +1,22 @@
+{
+  "slug": "remove-musty-smell",
+  "discovered_at": "2026-03-14",
+  "verdict": "GO",
+  "signal": {
+    "topic_title": "Anyone remove damp/musty smell from a room?",
+    "demand_type": "how_to",
+    "urgency": "low",
+    "platforms": ["r/HomeImprovement"],
+    "evidence": "213个Google Suggest补全, 常年需求"
+  },
+  "metrics": [
+    {"keyword": "how to remove musty smell", "kd": 20, "volume": 880, "cpc": 0.77}
+  ],
+  "suggest": {"count": 213},
+  "action": {
+    "site_type": "tutorial",
+    "primary_keywords": ["how to remove musty smell", "musty smell in house", "get rid of musty smell"],
+    "content_plan": "除霉味完整指南: 原因诊断/DIY方案/产品推荐/预防",
+    "monetization": "除湿机affiliate($100-300), 空气净化器, 除霉剂"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "slug": "flickr-alternative",
+  "discovered_at": "2026-03-14",
+  "verdict": "GO",
+  "signal": {
+    "topic_title": "Lost 10K-20K photos after Flickr Pro terminated",
+    "demand_type": "alternative",
+    "urgency": "medium",
+    "platforms": ["r/photography"],
+    "evidence": "KD9极低, CPC$2.62, 22个suggest, 小而美典型"
+  },
+  "metrics": [
+    {"keyword": "flickr alternative", "kd": 9, "volume": 90, "cpc": 2.62}
+  ],
+  "suggest": {"count": 22},
+  "action": {
+    "site_type": "comparison",
+    "primary_keywords": ["flickr alternative", "best photo sharing site", "flickr alternative 2026"],
+    "content_plan": "Flickr替代品对比: 500px/SmugMug/Google Photos/iCloud",
+    "monetization": "摄影服务affiliate, 云存储affiliate"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "slug": "best-dog-car-crate",
+  "discovered_at": "2026-03-14",
+  "verdict": "GO",
+  "signal": {
+    "topic_title": "Dog car crates",
+    "demand_type": "comparison",
+    "urgency": "low",
+    "platforms": ["r/dogs"],
+    "evidence": "60个Google Suggest补全, 宠物用品affiliate利基"
+  },
+  "metrics": [
+    {"keyword": "best dog car crate", "kd": 24, "volume": 70, "cpc": 1.43}
+  ],
+  "suggest": {"count": 60},
+  "action": {
+    "site_type": "comparison",
+    "primary_keywords": ["best dog car crate", "dog car crate comparison", "safest dog car crate"],
+    "content_plan": "狗车载箱对比评测: 安全性/尺寸/品牌/价格",
+    "monetization": "Amazon affiliate ($50-300 产品)"
+  }
+}

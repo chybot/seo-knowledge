@@ -1,0 +1,30 @@
+{
+  "date": "2026-03-14",
+  "version": "v2-niche",
+  "total_scanned": 504,
+  "params": {"hours": 48, "min_score": 0, "sources": "15 RSS + 22 Reddit subs + HN + HF"},
+  "results": {"go": 8, "watch": 10, "pass": 486},
+  "pipeline": "504 seeds → 55 粗筛存活 → 13 聚合方向 → 55 词 SEMrush + 5 Suggest → 8 GO, 10 WATCH",
+  "go": [
+    {"slug": "claude-code-vs-cursor", "keyword": "claude code vs cursor", "kd": 25, "volume": 3600, "cpc": 6.32, "category": "ai"},
+    {"slug": "insomnia-vs-postman", "keyword": "insomnia vs postman", "kd": 20, "volume": 480, "cpc": 9.28, "category": "devtools"},
+    {"slug": "remove-musty-smell", "keyword": "how to remove musty smell", "kd": 20, "volume": 880, "cpc": 0.77, "category": "home", "suggest": 213},
+    {"slug": "ice-dam-prevention", "keyword": "ice dam prevention", "kd": 23, "volume": 720, "cpc": 1.76, "category": "home", "suggest": 164},
+    {"slug": "cool-down-hot-room", "keyword": "how to cool down a hot room", "kd": 24, "volume": 210, "cpc": 0.12, "category": "home"},
+    {"slug": "run-ai-locally", "keyword": "run ai locally", "kd": 22, "volume": 210, "cpc": 3.48, "category": "ai"},
+    {"slug": "flickr-alternative", "keyword": "flickr alternative", "kd": 9, "volume": 90, "cpc": 2.62, "category": "photography"},
+    {"slug": "best-dog-car-crate", "keyword": "best dog car crate", "kd": 24, "volume": 70, "cpc": 1.43, "category": "pets", "suggest": 60}
+  ],
+  "watch": [
+    {"slug": "berberine-vs-ozempic", "keyword": "berberine vs ozempic", "kd": 47, "volume": 880, "cpc": 7.75, "reason": "KD高但CPC$7.75极高"},
+    {"slug": "dog-bike-trailer", "keyword": "dog bike trailer", "kd": 27, "volume": 4400, "cpc": 0.49, "reason": "Vol巨大找长尾"},
+    {"slug": "vitamin-d-hair-loss", "keyword": "vitamin d hair loss", "kd": 45, "volume": 1600, "cpc": 1.3, "reason": "Vol大KD高"},
+    {"slug": "littermate-syndrome", "keyword": "littermate syndrome dogs", "kd": 36, "volume": 3600, "cpc": 0.41, "reason": "Vol巨大找子话题"},
+    {"slug": "faceless-youtube", "keyword": "faceless youtube channel", "kd": 47, "volume": 2400, "cpc": 0.52, "reason": "Vol大KD高CPC低"},
+    {"slug": "rank-on-chatgpt", "keyword": "rank on chatgpt", "kd": 22, "volume": 50, "cpc": 9.43, "reason": "KD好CPC$9.43但Vol小"},
+    {"slug": "ai-manga-translator", "keyword": "ai manga translator", "kd": 46, "volume": 590, "cpc": 0.6, "reason": "KD高"},
+    {"slug": "iron-supplement-anemia", "keyword": "best iron supplement for anemia", "kd": 52, "volume": 5400, "cpc": 0.58, "reason": "Vol超大KD太高"},
+    {"slug": "ai-overviews-seo", "keyword": "ai overviews seo", "kd": 59, "volume": 260, "cpc": 6.26, "reason": "CPC高KD高"},
+    {"slug": "garden-pest-id", "keyword": "garden pest identification", "kd": 24, "volume": 70, "cpc": 0.96, "reason": "KD好CPC低"}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "slug": "insomnia-vs-postman",
+  "discovered_at": "2026-03-14",
+  "verdict": "GO",
+  "signal": {
+    "topic_title": "Open source API client in Tauri+Rust because Postman uses 800MB RAM",
+    "demand_type": "comparison",
+    "urgency": "medium",
+    "platforms": ["r/webdev"],
+    "evidence": "Reddit帖子抱怨Postman臃肿, Suggest 36个补全"
+  },
+  "metrics": [
+    {"keyword": "insomnia vs postman", "kd": 20, "volume": 480, "cpc": 9.28}
+  ],
+  "suggest": {"count": 36},
+  "action": {
+    "site_type": "comparison",
+    "primary_keywords": ["insomnia vs postman", "best api client", "postman alternative lightweight"],
+    "content_plan": "API客户端全面对比(Postman/Insomnia/Bruno/HTTPie) + 性能测试",
+    "monetization": "SaaS affiliate, AdSense CPC $9.28"
+  }
+}
