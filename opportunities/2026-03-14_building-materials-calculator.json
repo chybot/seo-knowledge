@@ -1,0 +1,30 @@
+{
+  "slug": "building-materials-calculator",
+  "discovered_at": "2026-03-14",
+  "verdict": "GO",
+  "signal": {
+    "topic_title": "Building materials calculator (Google Trends Rising Breakout)",
+    "demand_type": "tool_need",
+    "urgency": "low",
+    "platforms": ["Google Trends Rising"],
+    "evidence": "KD20 + SERP小站排#1 + 无AIO + 8个related长尾词群"
+  },
+  "metrics": [
+    {"keyword": "building materials calculator", "kd": 20, "volume": 90, "cpc": 2.23}
+  ],
+  "serp_analysis": {
+    "intent": "tool",
+    "top_domains": ["generationhbc.com", "omnicalculator.com", "homedepot.com"],
+    "small_site_in_top10": true,
+    "reddit_ranking": true,
+    "ai_overview": false,
+    "related_searches": ["building materials calculator square feet", "building materials calculator free", "building material calculator for shed"],
+    "opportunity_note": "小站排#1说明大站没认真做。web.app个人项目排#4更说明机会大"
+  },
+  "action": {
+    "site_type": "tool",
+    "primary_keywords": ["building materials calculator", "construction calculator online free"],
+    "content_plan": "在线建材计算器: 木材/混凝土/砖块/涂料/屋顶材料各自计算器",
+    "monetization": "AdSense + 建材电商affiliate"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "ti30xs-calculator-online",
+  "discovered_at": "2026-03-14",
+  "verdict": "GO",
+  "signal": {
+    "topic_title": "TI-30XS calculator online free (Google Trends Rising +250%)",
+    "demand_type": "tool_need",
+    "urgency": "medium",
+    "platforms": ["Google Trends Rising"],
+    "evidence": "KD16 + Vol1600 + SERP全是小工具站 + 无AIO + Trends季节性(学生开学季)"
+  },
+  "metrics": [
+    {"keyword": "ti-30xs calculator online", "kd": 16, "volume": 1600, "cpc": 0}
+  ],
+  "trends": {"lifecycle": "seasonal", "note": "学生开学季高峰，每年回来"},
+  "serp_analysis": {
+    "intent": "tool",
+    "top_domains": ["ti84calc.com", "ti84calcultor.com", "tinspireapps.com", "theti84calculator.com"],
+    "small_site_in_top10": true,
+    "reddit_ranking": false,
+    "ai_overview": false,
+    "related_searches": ["ti 30xs calculator online free", "TI-30XS MultiView online calculator", "TI-30XS calculator app"],
+    "opportunity_note": "SERP全是小工具站(ti84calc.com等)，KD16极低，Vol1600大。纯工具站需求"
+  },
+  "action": {
+    "site_type": "tool",
+    "primary_keywords": ["ti-30xs calculator online", "ti-30xs calculator online free", "scientific calculator online"],
+    "content_plan": "TI-30XS在线模拟器 + 使用教程 + 其他科学计算器模拟",
+    "monetization": "AdSense(学生流量大), 教育工具affiliate"
+  }
+}

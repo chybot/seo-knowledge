@@ -1,0 +1,31 @@
+{
+  "slug": "twilio-vs-plivo",
+  "discovered_at": "2026-03-14",
+  "verdict": "GO",
+  "signal": {
+    "topic_title": "Best SMS OTP provider — Twilio vs Plivo vs Prelude?",
+    "demand_type": "comparison",
+    "urgency": "medium",
+    "platforms": ["r/SaaS", "Google Trends Rising"],
+    "evidence": "KD12极低 + CPC$17.53每点击值$17 + SERP无AIO + Reddit排#3说明缺权威对比内容"
+  },
+  "metrics": [
+    {"keyword": "twilio vs plivo", "kd": 12, "volume": 70, "cpc": 17.53}
+  ],
+  "trends": {"lifecycle": "unknown", "note": "太小众Trends无数据但搜索需求真实"},
+  "serp_analysis": {
+    "intent": "comparison",
+    "top_domains": ["plivo.com", "getvoip.com", "reddit.com", "ringblaze.com", "cuspera.com"],
+    "small_site_in_top10": true,
+    "reddit_ranking": true,
+    "ai_overview": false,
+    "related_searches": ["twilio vs plivo reddit", "twilio vs plivo cost", "twilio vs plivo price"],
+    "opportunity_note": "Reddit排#3 + 小站排前8 = 专业对比页可以排上去。CPC$17.53极高"
+  },
+  "action": {
+    "site_type": "comparison",
+    "primary_keywords": ["twilio vs plivo", "twilio alternative cheap"],
+    "content_plan": "SMS/OTP API全面对比(Twilio/Plivo/Vonage/MessageBird): 价格/功能/DX/可靠性",
+    "monetization": "SaaS affiliate(SMS API月费$50-500+), 广告CPC$17.53"
+  }
+}
