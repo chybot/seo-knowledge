@@ -1,0 +1,32 @@
+{
+  "slug": "ti85-calculator-online",
+  "discovered_at": "2026-03-16",
+  "verdict": "GO",
+  "signal": {
+    "topic_title": "TI-85 Calculator Online (Google Trends Breakout)",
+    "demand_type": "tool_need",
+    "urgency": "medium",
+    "platforms": ["Google Trends Rising"],
+    "evidence": "Trends Breakout + KD21 + Vol320 + 学生刚需"
+  },
+  "metrics": [
+    {"keyword": "ti-85 calculator online", "kd": 21, "volume": 320, "cpc": 1.01},
+    {"keyword": "ti-84 calculator online free", "kd": 35, "volume": 880, "cpc": 0}
+  ],
+  "trends": {"lifecycle": "stable", "note": "学生持续需求，可与ti-30xs/ti-84合并做计算器工具矩阵"},
+  "serp_analysis": {
+    "intent": "tool",
+    "top_domains": ["ti84calc.com", "tinspireapps.com", "education.ti.com"],
+    "small_site_in_top10": true,
+    "reddit_ranking": false,
+    "ai_overview": true,
+    "related_searches": ["TI-85 calculator online free", "TI-85 calculator app"],
+    "opportunity_note": "SERP全是小工具站。有AIO但工具类搜索用户需要实际使用，不会被AIO截流"
+  },
+  "action": {
+    "site_type": "tool",
+    "primary_keywords": ["ti-85 calculator online", "ti-84 calculator online free", "ti-30xs calculator online"],
+    "content_plan": "TI系列计算器在线模拟矩阵: TI-85/TI-84/TI-30XS 各一个模拟器 + 使用教程",
+    "monetization": "AdSense(学生高PV), 教育SaaS affiliate"
+  }
+}

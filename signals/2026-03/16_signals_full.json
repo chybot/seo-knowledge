@@ -1,0 +1,19 @@
+{
+  "date": "2026-03-16",
+  "total_scanned": 1299,
+  "params": {"sources": "19 RSS + 42 Reddit + HN + Google Trends Rising(3 seeds)"},
+  "results": {"go": 3, "watch": 5, "pass": 1291},
+  "pipeline": "1299 seeds → 30 粗筛 → 10 聚合方向 → 33 词 SEMrush + 5 Trends lifecycle + 3 SERP → 3 GO, 5 WATCH",
+  "go": [
+    {"slug": "network-topology-tool", "keyword": "network topology tool", "kd": 19, "volume": 110, "cpc": 16.21, "category": "devtools", "trends": "seasonal", "serp_intent": "tool", "serp_note": "Reddit#2, 无AIO, CPC$16.21极高"},
+    {"slug": "ti85-calculator-online", "keyword": "ti-85 calculator online", "kd": 21, "volume": 320, "cpc": 1.01, "category": "education", "trends": "stable", "serp_intent": "tool", "serp_note": "全小站排名"},
+    {"slug": "flappy-bird-online", "keyword": "flappy bird online", "kd": 35, "volume": 1900, "cpc": 0.08, "category": "game", "trends": "stable(avg26)", "serp_intent": "game", "serp_note": "全小游戏站, 无AIO"}
+  ],
+  "watch": [
+    {"slug": "paint-bucket-tool", "keyword": "paint bucket tool online", "kd": 31, "volume": 320, "cpc": 1.93, "reason": "KD31略高, Trends Breakout"},
+    {"slug": "ti84-calculator", "keyword": "ti-84 calculator online free", "kd": 35, "volume": 880, "cpc": 0, "reason": "Vol好KD略高"},
+    {"slug": "tvm-calculator", "keyword": "tvm calculator online", "kd": 61, "volume": 320, "cpc": 1.37, "reason": "KD太高找长尾"},
+    {"slug": "pokemon-browser-game", "keyword": "pokemon browser game", "kd": 66, "volume": 720, "cpc": 4.36, "reason": "Vol+CPC好但KD太高+品牌风险"},
+    {"slug": "financial-calculator", "keyword": "financial calculator online free", "kd": 51, "volume": 590, "cpc": 2.23, "reason": "KD偏高"}
+  ]
+}

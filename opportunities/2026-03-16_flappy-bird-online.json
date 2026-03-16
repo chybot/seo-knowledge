@@ -1,0 +1,31 @@
+{
+  "slug": "flappy-bird-online",
+  "discovered_at": "2026-03-16",
+  "verdict": "GO",
+  "signal": {
+    "topic_title": "Flappy Bird Online (Google Trends Breakout)",
+    "demand_type": "tool_need",
+    "urgency": "high",
+    "urgency_reason": "Trends Breakout说明正在爆发，需要快速抢占",
+    "platforms": ["Google Trends Rising"],
+    "evidence": "Trends Breakout + KD35(可接受) + Vol1900 + SERP全小游戏站"
+  },
+  "metrics": [
+    {"keyword": "flappy bird online", "kd": 35, "volume": 1900, "cpc": 0.08}
+  ],
+  "trends": {"lifecycle": "stable", "avg_interest": 26, "peak": 64, "note": "经典IP，稳定搜索量 + 周期性爆发"},
+  "serp_analysis": {
+    "intent": "game",
+    "top_domains": ["flappybird.io", "poki.com", "crazygames.com"],
+    "small_site_in_top10": true,
+    "reddit_ranking": false,
+    "ai_overview": false,
+    "opportunity_note": "SERP全是小游戏站，无大站。低CPC但靠广告展示量(高PV+长停留时间)变现"
+  },
+  "action": {
+    "site_type": "game",
+    "primary_keywords": ["flappy bird online", "flappy bird game", "play flappy bird"],
+    "content_plan": "Flappy Bird 在线版 + 变体(多人/排行榜) + 类似小游戏矩阵",
+    "monetization": "AdSense display ads (高PV, 长session)"
+  }
+}

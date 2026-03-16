@@ -1,0 +1,56 @@
+{
+  "slug": "network-topology-tool",
+  "discovered_at": "2026-03-16",
+  "verdict": "GO",
+  "signal": {
+    "topic_title": "Network Diagram / Topology Tool Online Free",
+    "topic_tag": "devtools",
+    "demand_type": "tool_need",
+    "urgency": "medium",
+    "urgency_reason": "IT 基础设施管理的持续需求，每个项目/学年都需要",
+    "platforms": ["Google Trends Rising"],
+    "source_count": 1,
+    "evidence": "Trends Rising Breakout +1700% + KD19极低 + CPC$16.21极高 + Reddit在SERP排名说明缺专业工具"
+  },
+  "filter": {
+    "search_intent": {"pass": true, "detail": "IT管理员/学生需要在线画网络拓扑图，明确的工具需求"},
+    "keywords_exist": {"pass": true, "detail": "network topology tool, network diagram maker free, network mapping tool online"},
+    "small_site_can_rank": {"pass": true, "detail": "SERP全是中型工具站(dnsstuff,whatsupgold等)，无巨头垄断"},
+    "sustainable": {"pass": true, "detail": "IT基础设施管理是持续需求，seasonal但每年回来"},
+    "monetizable": {"pass": true, "detail": "CPC$16.21极高! SaaS upgrade路径清晰(免费→付费), B2B广告"}
+  },
+  "metrics": [
+    {"keyword": "network topology tool", "kd": 19, "volume": 110, "cpc": 16.21},
+    {"keyword": "network diagram tool online free", "kd": 34, "volume": 50, "cpc": 5.17},
+    {"keyword": "network diagram maker free", "kd": 46, "volume": 70, "cpc": 3.74}
+  ],
+  "trends": {
+    "lifecycle": "seasonal",
+    "avg_interest": 0,
+    "peak": 28,
+    "note": "IT学年/项目周期带来季节性，但需求持续存在"
+  },
+  "serp_analysis": {
+    "intent": "tool",
+    "top_domains": ["dnsstuff.com", "reddit.com", "whatsupgold.com", "solarwinds.com", "paessler.com", "tufin.com", "domotz.com"],
+    "small_site_in_top10": true,
+    "reddit_ranking": true,
+    "ai_overview": false,
+    "related_searches": ["Network topology tool free", "Network topology Mapper", "Network topology tools open-source", "Network topology tool download", "Best network topology tool", "Home network mapping tools free", "Free network mapping tools for Windows", "Best network mapping software free"],
+    "opportunity_note": "Reddit排名#2说明缺少好的免费在线工具。现有排名全是桌面软件公司的产品页，没有纯Web工具站。8个related searches = 词群丰富"
+  },
+  "action": {
+    "site_type": "tool",
+    "primary_keywords": ["network topology tool", "network diagram tool online free", "network topology mapper"],
+    "secondary_keywords": ["network topology tools open-source", "home network mapping tools free", "network diagram maker free"],
+    "content_plan": "在线网络拓扑图绘制工具: 拖拽式编辑器 + 模板库(LAN/WAN/Cloud) + 导出PNG/SVG + 教程",
+    "monetization": "Freemium SaaS(免费基础→$10/月Pro导出/协作), B2B广告CPC$16.21, IT工具affiliate",
+    "estimated_pages": 5,
+    "next_steps": [
+      "SERP 深度分析竞品功能",
+      "MVP: 简单的拖拽拓扑图编辑器",
+      "做 5 个模板(LAN/WAN/Cloud/Home/Office)",
+      "SEO: 针对每个 related search 做一个着陆页"
+    ]
+  }
+}

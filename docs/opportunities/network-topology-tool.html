@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>network-topology-tool — SEO Knowledge Base</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;
+  background:#0a0a0a; color:#e0e0e0; -webkit-font-smoothing:antialiased; }
+a { color:#60a5fa; text-decoration:none; } a:hover { text-decoration:underline; }
+.container { max-width:940px; margin:0 auto; padding:20px 16px; }
+.header { text-align:center; padding:40px 0 24px; border-bottom:1px solid #1a1a1a; margin-bottom:28px; }
+.header h1 { font-size:24px; font-weight:700; color:#fff; letter-spacing:-.3px; }
+.header p { color:#555; font-size:13px; margin-top:6px; }
+.breadcrumb { font-size:12px; color:#555; margin-bottom:20px; }
+.breadcrumb a { color:#666; }
+.stats { display:flex; justify-content:center; gap:10px; margin-top:14px; flex-wrap:wrap; }
+.stat { font-size:12px; color:#666; background:#111; padding:4px 12px; border-radius:16px; border:1px solid #1a1a1a; }
+.stat strong { color:#aaa; }
+.pipeline { display:flex; align-items:center; justify-content:center; gap:6px; margin:20px 0 30px; flex-wrap:wrap; }
+.pipeline .step { font-size:11px; color:#555; background:#111; padding:4px 10px; border-radius:6px; border:1px solid #1a1a1a; }
+.pipeline .arrow { color:#333; font-size:12px; }
+section { margin-bottom:36px; }
+section h2 { font-size:16px; font-weight:600; color:#888; margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+section h2 .dot { width:6px; height:6px; border-radius:50%; }
+section h3 { font-size:14px; color:#aaa; margin:18px 0 10px; }
+
+/* Cards */
+.card { background:#0d0d0d; border:1px solid #1a1a1a; border-radius:12px;
+  padding:16px 18px; margin-bottom:10px; transition:border-color .15s; cursor:pointer; display:block; text-decoration:none !important; color:inherit; }
+.card:hover { border-color:#333; }
+.card.go { border-left:3px solid #22c55e; }
+.card.watch { border-left:3px solid #eab308; }
+.card.pass { border-left:3px solid #555; }
+.card-header { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.badge { font-size:10px; padding:2px 8px; border-radius:4px; font-weight:600; }
+.badge.go { background:#052e16; color:#4ade80; }
+.badge.watch { background:#2a1f00; color:#facc15; }
+.badge.pass { background:#1a1a1a; color:#666; }
+.slug { font-size:12px; color:#555; font-family:monospace; }
+.date { font-size:11px; color:#444; margin-left:auto; }
+.card-title { font-size:15px; font-weight:600; color:#eee; line-height:1.4; margin-bottom:6px; }
+.card-meta { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px; }
+.tag { font-size:10px; padding:2px 8px; border-radius:10px; background:#1a1a1a; color:#888; border:1px solid #252525; }
+.card-detail { font-size:12px; color:#666; line-height:1.6; }
+.card-kw { font-size:12px; color:#777; margin-top:6px; }
+.card-kw code { background:#111; padding:1px 5px; border-radius:3px; color:#aaa; font-size:11px; }
+.card-arrow { float:right; color:#333; font-size:14px; margin-top:4px; }
+
+/* Tables */
+.kw-table { width:100%; font-size:12px; border-collapse:collapse; margin:10px 0; }
+.kw-table th { text-align:left; color:#555; font-weight:500; padding:6px 10px; border-bottom:1px solid #1a1a1a; }
+.kw-table td { padding:6px 10px; color:#aaa; border-bottom:1px solid #111; }
+.kw-table td.kw { color:#ddd; font-family:monospace; }
+.kw-table tr:last-child td { border-bottom:none; }
+.kw-table td.good { color:#4ade80; }
+.kw-table td.warn { color:#facc15; }
+.kw-table td.bad { color:#f87171; }
+
+/* Filter checklist */
+.filter-list { list-style:none; margin:10px 0; }
+.filter-list li { font-size:13px; color:#888; padding:6px 10px; border-bottom:1px solid #111; line-height:1.5; }
+.filter-list li:last-child { border:none; }
+.filter-list .pass-icon { color:#4ade80; }
+.filter-list .fail-icon { color:#f87171; }
+.filter-list .warn-icon { color:#facc15; }
+
+/* Suggest cloud */
+.suggest-cloud { display:flex; flex-wrap:wrap; gap:5px; margin:10px 0; }
+.suggest-cloud span { font-size:11px; padding:3px 8px; background:#111; border:1px solid #1a1a1a;
+  border-radius:6px; color:#888; }
+
+/* Trend sparkline (simple CSS bars) */
+.trend-bars { display:flex; align-items:flex-end; gap:2px; height:30px; margin:4px 0; }
+.trend-bars .bar { width:8px; background:#333; border-radius:1px; min-height:2px; }
+
+/* Signal list on daily page */
+.sig-row { display:flex; align-items:center; gap:10px; padding:8px 12px;
+  border-bottom:1px solid #111; font-size:13px; }
+.sig-row:last-child { border:none; }
+.sig-row .sig-rank { color:#444; font-size:11px; min-width:24px; }
+.sig-row .sig-verdict { min-width:50px; }
+.sig-row .sig-title { flex:1; color:#bbb; }
+.sig-row .sig-source { color:#555; font-size:11px; min-width:80px; }
+.sig-row .sig-reason { color:#555; font-size:11px; flex:1; max-width:300px; }
+.sig-row.is-go .sig-title { color:#4ade80; font-weight:600; }
+.sig-row.is-watch .sig-title { color:#facc15; }
+.sig-row a { color:inherit; text-decoration:none; }
+.sig-row a:hover .sig-title { color:#fff; }
+
+/* Detail blocks */
+.detail-block { background:#0d0d0d; border:1px solid #1a1a1a; border-radius:10px; padding:16px; margin-bottom:14px; }
+.detail-block h4 { font-size:13px; color:#666; margin-bottom:10px; text-transform:uppercase; letter-spacing:.5px; }
+.detail-text { font-size:13px; color:#999; line-height:1.7; }
+.detail-text strong { color:#ccc; }
+.next-steps { list-style:none; }
+.next-steps li { font-size:13px; color:#888; padding:4px 0; }
+.next-steps li::before { content:"→ "; color:#444; }
+
+.empty { text-align:center; color:#444; padding:30px; font-size:13px; }
+.empty code { background:#1a1a1a; padding:2px 6px; border-radius:4px; color:#888; }
+.footer { text-align:center; padding:20px 0; margin-top:20px; border-top:1px solid #111; }
+.footer p { font-size:10px; color:#333; }
+@media(max-width:640px) { .container { padding:12px 10px; } .card { padding:12px 14px; } }
+</style>
+</head><body><div class="container"><div class="breadcrumb"><a href="../index.html">首页</a> / network-topology-tool</div>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+      <span class="badge go" style="font-size:14px;padding:4px 12px">🟢 GO</span>
+      <h1 style="font-size:22px;color:#fff">Network Diagram / Topology Tool Online Free</h1>
+    </div>
+    <div class="card-meta" style="margin-bottom:20px">
+      <span class="tag">tool_need</span>
+      <span class="tag">tool</span>
+      <span class="tag">Google Trends Rising</span>
+      <span class="tag">2026-03-16</span>
+    </div>
+
+    <div class="detail-block"><h4>📡 信号来源</h4>
+          <div class="detail-text">
+            <p><strong>来源平台:</strong> Google Trends Rising</p>
+            <p><strong>需求类型:</strong> tool_need</p>
+            <p><strong>紧急度:</strong> 🟡 medium — IT 基础设施管理的持续需求，每个项目/学年都需要</p>
+            <p><strong>证据:</strong> Trends Rising Breakout +1700% + KD19极低 + CPC$16.21极高 + Reddit在SERP排名说明缺专业工具</p>
+          </div>
+        </div>
+    <section><h3>5 问过滤</h3><ul class="filter-list"><li><span class="pass-icon">✅</span> <strong>搜索意图存在？</strong> IT管理员/学生需要在线画网络拓扑图，明确的工具需求</li><li><span class="pass-icon">✅</span> <strong>能想到关键词？</strong> network topology tool, network diagram maker free, network mapping tool online</li><li><span class="pass-icon">✅</span> <strong>小站能排？</strong> SERP全是中型工具站(dnsstuff,whatsupgold等)，无巨头垄断</li><li><span class="pass-icon">✅</span> <strong>需求可持续？</strong> IT基础设施管理是持续需求，seasonal但每年回来</li><li><span class="pass-icon">✅</span> <strong>能变现？</strong> CPC$16.21极高! SaaS upgrade路径清晰(免费→付费), B2B广告</li></ul></section>
+    
+    <div class="detail-block"><h4>SEMrush 指标</h4>
+          <table class="kw-table"><thead><tr>
+            <th>Keyword</th><th>KD</th><th>Vol</th><th>CPC</th><th>12M Trend</th><th>备注</th>
+          </tr></thead><tbody><tr>
+              <td class="kw">network topology tool</td>
+              <td class="good">19</td>
+              <td class="warn">110</td>
+              <td>$16.21</td>
+              <td></td>
+              <td style="font-size:11px;color:#555"></td>
+            </tr><tr>
+              <td class="kw">network diagram tool online free</td>
+              <td class="warn">34</td>
+              <td class="warn">50</td>
+              <td>$5.17</td>
+              <td></td>
+              <td style="font-size:11px;color:#555"></td>
+            </tr><tr>
+              <td class="kw">network diagram maker free</td>
+              <td class="bad">46</td>
+              <td class="warn">70</td>
+              <td>$3.74</td>
+              <td></td>
+              <td style="font-size:11px;color:#555"></td>
+            </tr></tbody></table></div>
+    <div class="detail-block"><h4>📈 Google Trends</h4>
+          <div class="detail-text">
+            <p><strong>生命周期:</strong> <span style="color:#60a5fa">🔄 seasonal</span></p>
+            
+            <p style="color:#666">IT学年/项目周期带来季节性，但需求持续存在</p>
+          </div>
+        </div>
+    <div class="detail-block"><h4>🔍 SERP 分析（Google 搜索结果）</h4>
+          <div class="detail-text">
+            <p><strong>搜索意图:</strong> 🛠️ tool</p>
+            <div style="margin:8px 0"><span class="tag" style="border-color:#22c55e40;color:#4ade80">✅ 小站能排</span> <span class="tag" style="border-color:#ff450040;color:#ff6b6b">🔥 Reddit 在排名</span> <span class="tag" style="border-color:#22c55e40;color:#4ade80">✅ 无 AI Overview</span></div>
+            <p style="color:#aaa;margin:8px 0">💡 Reddit排名#2说明缺少好的免费在线工具。现有排名全是桌面软件公司的产品页，没有纯Web工具站。8个related searches = 词群丰富</p>
+          </div>
+          <table class="kw-table" style="max-width:300px"><thead><tr><th>#</th><th>Domain</th></tr></thead><tbody><tr><td>#1</td><td class="good">dnsstuff.com</td></tr><tr><td>#2</td><td class="good">reddit.com</td></tr><tr><td>#3</td><td class="good">whatsupgold.com</td></tr><tr><td>#4</td><td class="good">solarwinds.com</td></tr><tr><td>#5</td><td class="good">paessler.com</td></tr><tr><td>#6</td><td class="good">tufin.com</td></tr><tr><td>#7</td><td class="good">domotz.com</td></tr></tbody></table>
+          <div style="margin-top:10px"><strong>Related Searches:</strong><div class="suggest-cloud" style="margin-top:6px"><span>Network topology tool free</span><span>Network topology Mapper</span><span>Network topology tools open-source</span><span>Network topology tool download</span><span>Best network topology tool</span><span>Home network mapping tools free</span><span>Free network mapping tools for Windows</span><span>Best network mapping software free</span></div></div>
+        </div>
+    
+    <div class="detail-block"><h4>行动计划</h4><div class="detail-text">
+          <p><strong>站点类型:</strong> tool</p>
+          <p><strong>主攻词:</strong> <code>network topology tool</code>, <code>network diagram tool online free</code>, <code>network topology mapper</code></p>
+          <p><strong>辅助词:</strong> <code>network topology tools open-source</code>, <code>home network mapping tools free</code>, <code>network diagram maker free</code></p>
+          <p><strong>内容计划:</strong> 在线网络拓扑图绘制工具: 拖拽式编辑器 + 模板库(LAN/WAN/Cloud) + 导出PNG/SVG + 教程</p>
+          <p><strong>变现方式:</strong> Freemium SaaS(免费基础→$10/月Pro导出/协作), B2B广告CPC$16.21, IT工具affiliate</p>
+          <p><strong>预估页面:</strong> 5 页</p>
+          <ul class='next-steps'><li>SERP 深度分析竞品功能</li><li>MVP: 简单的拖拽拓扑图编辑器</li><li>做 5 个模板(LAN/WAN/Cloud/Home/Office)</li><li>SEO: 针对每个 related search 做一个着陆页</li></ul>
+        </div></div>
+<div class="footer"><p>seo-knowledge · auto-generated by build_site.py</p></div>
+</div></body></html>
