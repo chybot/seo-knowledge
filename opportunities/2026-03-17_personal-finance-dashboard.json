@@ -1,0 +1,30 @@
+{
+  "date": "2026-03-17",
+  "verdict": "WATCH",
+  "verdict_reason": "Good CPC ($4.70) and Reddit #1 signals gap, but KD=37 is above threshold. Notion templates dominate SERP suggesting existing solutions. Monitor for long-tail variants.",
+  "direction": "Personal Finance Dashboard / Budget Tracker Tool",
+  "primary_keyword": "personal finance dashboard",
+  "keyword_cluster": [
+    {"keyword": "personal finance dashboard", "volume": 390, "kd": 37, "cpc": 4.70},
+    {"keyword": "spending analyzer app", "volume": 0, "kd": null, "cpc": 4.98},
+    {"keyword": "budget analyzer tool", "volume": null, "kd": null, "cpc": null}
+  ],
+  "cluster_total_volume": 390,
+  "serp_analysis": {
+    "intent": "commercial_tool",
+    "top_domains": ["www.reddit.com", "breakyourbudget.com", "break-your-budget.teachable.com", "www.notion.com", "public.tableau.com", "shop.gridfiti.com"],
+    "small_site_in_top10": true,
+    "reddit_ranking": true,
+    "ai_overview": false,
+    "related_searches": [],
+    "opportunity_note": "Reddit #1 proves users asking for recommendations. Notion templates and Teachable courses rank = people selling info products not building real tools. Gap for a free web-based dashboard that connects to bank feeds."
+  },
+  "trends": {
+    "lifecycle": "new",
+    "avg_interest": 10,
+    "peak": 100,
+    "note": "Growing interest trend. Financial planning tools gaining attention as economic uncertainty increases."
+  },
+  "watch_notes": "Look for lower KD long-tail variants: 'free budget tracker no login', 'simple spending dashboard'. Consider building as add-on to existing finance content site.",
+  "source_signals": ["HN Show: Trackm personal finance web app (#174)", "r/personalfinance: Best spending analyzer (#686)", "Google Trends: personal finance dashboard (new, peak:100)"]
+}

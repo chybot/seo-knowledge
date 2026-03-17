@@ -1,0 +1,48 @@
+{
+  "date": "2026-03-17",
+  "verdict": "GO",
+  "verdict_reason": "Low KD (20), decent volume (390), Reddit ranks #2 signaling content gap, small niche sites (picdefense.io, taxtosell.eu) rank well, clear tool intent with SaaS upgrade path",
+  "direction": "Image Copyright Checker / Unauthorized Photo Use Finder",
+  "primary_keyword": "image copyright checker",
+  "keyword_cluster": [
+    {"keyword": "image copyright checker", "volume": 390, "kd": 20, "cpc": 0},
+    {"keyword": "reverse image search copyright", "volume": 20, "kd": null, "cpc": 0},
+    {"keyword": "check if image is copyrighted", "volume": null, "kd": null, "cpc": null},
+    {"keyword": "find who stole my photo", "volume": null, "kd": null, "cpc": null},
+    {"keyword": "image copyright search", "volume": null, "kd": null, "cpc": null}
+  ],
+  "cluster_total_volume": 410,
+  "serp_analysis": {
+    "intent": "commercial_tool",
+    "top_domains": ["tineye.com", "www.reddit.com", "www.ctcd.edu", "picdefense.io", "taxtosell.eu", "lenso.ai", "www.pixsy.com", "www.scanmyphotos.com", "community.adobe.com"],
+    "small_site_in_top10": true,
+    "reddit_ranking": true,
+    "ai_overview": true,
+    "related_searches": [],
+    "opportunity_note": "Reddit #2 and .edu site #3 prove gap for authoritative tool content. TinEye is reverse image search but not specifically a copyright checker. picdefense.io and taxtosell.eu are tiny new players ranking well. AI Overview present but tool intent means users need to actually use a tool, not just read about it."
+  },
+  "trends": {
+    "lifecycle": "unknown",
+    "avg_interest": 0,
+    "peak": 0,
+    "note": "Too low for Google Trends detection but SEMrush shows consistent 390 monthly searches. Likely stable evergreen demand from photographers and content creators."
+  },
+  "monetization": {
+    "model": "Freemium SaaS + Affiliate (photography tools)",
+    "estimated_monthly_revenue": "$100-400",
+    "rationale": "Small but targeted B2B audience (photographers, agencies, content creators). Free tier: check 5 images/month. Pro tier: unlimited checks, monitoring alerts, DMCA takedown templates. Affiliate links to Pixsy, CopyTrack, Getty contributor program."
+  },
+  "execution_plan": {
+    "mvp": "Free image copyright checker tool: upload image or paste URL, tool checks Creative Commons metadata, reverse image searches, and provides copyright status assessment. DMCA takedown letter template generator.",
+    "content_strategy": "Build content around 'how to check if image is copyrighted', 'what to do if someone stole your photo', 'free images for commercial use'. Target photographers and bloggers.",
+    "seo_pages": [
+      "image copyright checker (main tool)",
+      "how to check if an image is copyrighted",
+      "DMCA takedown notice template",
+      "free images for commercial use guide",
+      "reverse image search for copyright"
+    ],
+    "technical_notes": "Use browser-based EXIF metadata extraction. Integrate with TinEye/Google Vision API for reverse search. CC license detection from metadata."
+  },
+  "source_signals": ["HN Show: tool to find companies using photos without paying (#157)", "r/photography: TV network used photograph without asking (#255)", "r/photography: copyright on vintage photo prints (#301)", "Google Trends Rising: related image tool queries"]
+}
