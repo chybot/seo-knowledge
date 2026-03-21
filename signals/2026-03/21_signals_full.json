@@ -1,0 +1,105 @@
+{
+  "date": "2026-03-21",
+  "sources": {
+    "rss_reddit_hn": 1989,
+    "google_trends_rising": 79,
+    "total_seeds": 886
+  },
+  "coarse_filter": {
+    "directions": 17,
+    "survived_to_validation": 7
+  },
+  "go": [
+    {
+      "slug": "mnemonic-generator",
+      "keyword": "mnemonic generator",
+      "volume": 2400,
+      "kd": 14,
+      "cpc": 0.00,
+      "trends": "stable",
+      "ai_overview": false,
+      "serp_small_sites": true,
+      "reddit_demand": "high"
+    },
+    {
+      "slug": "vram-calculator",
+      "keyword": "vram calculator",
+      "volume": 110,
+      "kd": 29,
+      "cpc": 0.00,
+      "trends": "seasonal",
+      "ai_overview": false,
+      "serp_small_sites": true,
+      "reddit_demand": "high"
+    }
+  ],
+  "watch": [
+    {
+      "slug": "paint-bucket-tool-online",
+      "keyword": "paint bucket tool online",
+      "volume": 320,
+      "kd": 26,
+      "cpc": 1.72,
+      "trends": "unknown",
+      "ai_overview": true,
+      "reason": "AI Overview present. Need to find long-tail variants without AIO. Related: 'free paint bucket tool online', 'color fill tool online'"
+    },
+    {
+      "slug": "b2b-prospecting-tool",
+      "keyword": "b2b prospecting tool",
+      "volume": 590,
+      "kd": 5,
+      "cpc": 0.00,
+      "trends": "seasonal",
+      "ai_overview": true,
+      "reason": "AI Overview + big SaaS players (Lusha, Apollo, ZoomInfo). KD 5 is misleadingly low - actual competition is fierce. Try 'b2b prospecting tool free' as alternative angle."
+    },
+    {
+      "slug": "daily-puzzle-game",
+      "keyword": "daily puzzle game",
+      "volume": 260,
+      "kd": 45,
+      "cpc": 0.60,
+      "trends": "new",
+      "ai_overview": false,
+      "reason": "KD 45 is above threshold. But 'new' trend signal and Reddit ranking (#3) is positive. Monitor for KD drop. Consider specific puzzle types as entry point."
+    },
+    {
+      "slug": "ti-85-calculator-online",
+      "keyword": "ti-85 calculator online",
+      "volume": 320,
+      "kd": 21,
+      "cpc": 1.01,
+      "trends": "stable",
+      "ai_overview": false,
+      "reason": "Previously identified on 3/16. Still a valid opportunity. All niche sites in SERP."
+    }
+  ],
+  "pass": [
+    {
+      "keyword": "sales prospecting software",
+      "volume": 320,
+      "kd": 31,
+      "cpc": 18.62,
+      "reason": "SERP full of giants: Apollo, ZoomInfo, HubSpot, Salesforce, Monday. AI Overview present. CPC $18.62 means fierce paid competition."
+    },
+    {
+      "keyword": "auto loan calculator",
+      "volume": 550000,
+      "kd": 81,
+      "reason": "KD 81 - impossible for small site"
+    },
+    {
+      "keyword": "free phone number lookup",
+      "volume": 74000,
+      "kd": 71,
+      "reason": "KD 71 - too competitive"
+    },
+    {
+      "keyword": "graphing calculator online",
+      "volume": 18100,
+      "kd": 63,
+      "reason": "KD 63 - dominated by established tools"
+    }
+  ]
+}

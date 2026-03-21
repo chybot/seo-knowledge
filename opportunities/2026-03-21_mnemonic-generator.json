@@ -1,0 +1,38 @@
+{
+  "date": "2026-03-21",
+  "slug": "mnemonic-generator",
+  "verdict": "GO",
+  "verdict_reason": "KD 14 is extremely low for 2400 monthly volume. No AI Overview. SERP dominated by small niche sites (mnemonicgenerator.com, vondy.com, mnemonicmaker.com) and Reddit ranks #3 indicating lack of authoritative content. CPC is $0 but monetization via ads/freemium is viable given volume. Strong Reddit demand from r/languagelearning and r/medicalschool for mnemonic creation tools. Stable trend indicates evergreen demand.",
+  "signal": {
+    "source": "r/languagelearning + Google Trends",
+    "topic_title": "Mnemonic Generator / Memory Aid Tool",
+    "raw_text": "Any application(s) that is/are meant for creating mnemonics?"
+  },
+  "metrics": [
+    {"keyword": "mnemonic generator", "volume": 2400, "kd": 14, "cpc": 0.00},
+    {"keyword": "mnemonic maker", "volume": 720, "kd": 20, "cpc": 0.00},
+    {"keyword": "mnemonic generator from letters", "volume": null, "kd": null, "cpc": null},
+    {"keyword": "mnemonic generator online", "volume": null, "kd": null, "cpc": null},
+    {"keyword": "mnemonic generator AI", "volume": null, "kd": null, "cpc": null}
+  ],
+  "serp_analysis": {
+    "intent": "tool",
+    "top_domains": ["mnemonicgenerator.com", "chatgpt.com", "reddit.com", "vondy.com", "mnemonicmaker.com", "automem.us", "nasa.gov"],
+    "small_site_in_top10": true,
+    "reddit_ranking": true,
+    "ai_overview": false,
+    "related_searches": ["Mnemonic generator from letters", "Mnemonic generator online", "Mnemonic generator free", "First letter mnemonic generator", "Mnemonic generator with balance", "Mnemonic generator AI"],
+    "opportunity_note": "Reddit #3 = no authoritative content exists. All top results are small niche tools. ChatGPT.com ranking suggests AI-powered mnemonic tools are the new standard. Build AI-powered mnemonic generator with letter-based, topic-based, and vocabulary modes."
+  },
+  "trends": {
+    "lifecycle": "stable",
+    "avg_interest": 0,
+    "peak": 6
+  },
+  "reddit_demand": {
+    "pain_points": 3,
+    "tool_requests": 3,
+    "key_insight": "Language learners and medical students need custom mnemonics. Existing tools are basic. AI-powered generation is the gap."
+  },
+  "build_approach": "AI-powered mnemonic generator SaaS. Free tier for basic mnemonics, premium for bulk generation, study sets, and spaced repetition integration. Target language learners, medical students, and test prep."
+}

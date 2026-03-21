@@ -1,0 +1,36 @@
+{
+  "date": "2026-03-21",
+  "slug": "vram-calculator",
+  "verdict": "GO",
+  "verdict_reason": "KD 29 with no AI Overview. SERP is 100% small sites and open source projects (apxml.com, huggingface.co, github.com, smcleod.net, vram.asmirnov.xyz). Reddit and HN both rank = massive content gap. Vol 110 for head term but 'VRAM calculator games' and 'VRAM calculator LLM' expand the cluster. Reddit r/LocalLLaMA has constant VRAM questions (3 tool requests in demand mining). AI/GPU hobbyist niche is growing fast. CPC $0 currently but GPU affiliate potential is huge.",
+  "signal": {
+    "source": "r/webdev + r/LocalLLaMA",
+    "topic_title": "VRAM Calculator for AI/GPU Workloads",
+    "raw_text": "I built a VRAM Calculator for the 50-series GPUs because I was tired of OOM errors"
+  },
+  "metrics": [
+    {"keyword": "vram calculator", "volume": 110, "kd": 29, "cpc": 0.00},
+    {"keyword": "gpu vram calculator", "volume": 10, "kd": 0, "cpc": 0.00},
+    {"keyword": "llm vram requirements", "volume": 30, "kd": 0, "cpc": 0.00}
+  ],
+  "serp_analysis": {
+    "intent": "tool",
+    "top_domains": ["apxml.com", "huggingface.co", "smcleod.net", "github.com", "vram.asmirnov.xyz", "news.ycombinator.com", "reddit.com"],
+    "small_site_in_top10": true,
+    "reddit_ranking": true,
+    "ai_overview": false,
+    "related_searches": ["VRAM calculator GitHub", "Vram calculator llm", "VRAM calculator games", "VRAM calculator VRChat", "VRAM calculator unity", "VRAM calculator huggingface"],
+    "opportunity_note": "Every single top result is a small site or open source tool. Reddit AND HN both rank. This is a pure blue ocean for a well-built tool. Related searches show demand spans gaming, LLM, VRChat, and Unity - multiple entry points for content."
+  },
+  "trends": {
+    "lifecycle": "seasonal",
+    "avg_interest": 0,
+    "peak": 9
+  },
+  "reddit_demand": {
+    "pain_points": 2,
+    "tool_requests": 3,
+    "key_insight": "LocalLLaMA users constantly ask 'can my GPU run this model?' and 'how much VRAM do I need for X'. Existing calculators are basic and don't cover latest models."
+  },
+  "build_approach": "Comprehensive VRAM calculator covering: LLM models (with quantization), gaming, VRChat, Unity. Database of GPU specs + model requirements. SEO via model-specific pages ('how much VRAM for Llama 3 70B'). Monetize via GPU affiliate links."
+}
